@@ -217,7 +217,7 @@ public class CameraMovement : MonoBehaviour
 	#region FindClue
 	void FindClue()
 	{
-		if (!_isMoving)
+		if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
 		{
 			if (_mouseRayHit.collider != null)
 			{
