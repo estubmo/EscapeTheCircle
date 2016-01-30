@@ -231,8 +231,16 @@ public class CameraMovement : MonoBehaviour
 		{
 			if (_mouseRayHit.collider != null)
 			{
-				if (clueManager.isClue(_mouseRayHit.collider.gameObject)) {
-					Debug.Log ("isClue");
+				var obj = _mouseRayHit.collider.gameObject;
+				if (clueManager.isClue(obj)) {
+					clueManager.addPlayerClue (obj);
+					obj.GetComponentInChildren<Light> (true).enabled = true;
+					if (clueManager.isClueOrderCorrect ()) {
+						Debug.Log ("Victory");
+					} else {
+						/*new List<Light>(clueManager.getClueContainer ()
+							.GetComponentsInChildren<Light> ()).ForEach(x => Destroy(x));*/
+					}
 				}
 			}
 		}
