@@ -4,12 +4,18 @@ using System.Collections.Generic;
 
 public class ClueManager : MonoBehaviour {
 
+	private string clueTag;
 	private List<GameObject> clueOrder;
 	private List<GameObject> clues;
 
 	public ClueManager() {
+		clueTag = "Clue";
 		clueOrder = new List<GameObject> ();
-		clues = new List<GameObject>(GameObject.FindGameObjectsWithTag ("Clue"));
+		clues = new List<GameObject>(GameObject.FindGameObjectsWithTag (clueTag));
+	}
+
+	public bool isClue(GameObject obj) {
+		return obj.tag == clueTag;
 	}
 
 	public List<GameObject> getSceneClues() {

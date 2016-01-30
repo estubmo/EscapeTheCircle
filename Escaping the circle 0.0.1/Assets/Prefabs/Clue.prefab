@@ -11,7 +11,7 @@ GameObject:
   - 135: {fileID: 13554658}
   - 114: {fileID: 11458852}
   m_Layer: 8
-  m_Name: Clue01
+  m_Name: Clue
   m_TagString: Clue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Name
+      value: Clue
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 129088}
