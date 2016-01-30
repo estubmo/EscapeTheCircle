@@ -279,7 +279,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 129696721}
   m_LocalRotation: {x: 0.5487318, y: 0, z: 0, w: 0.8359984}
-  m_LocalPosition: {x: 5.45, y: -19.100006, z: -19.070011}
+  m_LocalPosition: {x: 5.45, y: -11.59, z: -23.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -295,7 +295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f464aae92415c4eb1572b69a26cba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeNeededToFindFlaw: 0
   _sensitivityOfViewPort: 0.2
+  _SpeedOfRotation: 0
 --- !u!1001 &229864340
 Prefab:
   m_ObjectHideFlags: 0
@@ -529,7 +531,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 4b9637639c5b7594f856217fc4c01d86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.630391
+      value: 36.925797
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4b9637639c5b7594f856217fc4c01d86, type: 3}
       propertyPath: m_LocalPosition.y
@@ -537,7 +539,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4b9637639c5b7594f856217fc4c01d86, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -53.34812
+      value: -15.873532
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4b9637639c5b7594f856217fc4c01d86, type: 3}
       propertyPath: m_LocalRotation.x
@@ -545,7 +547,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4b9637639c5b7594f856217fc4c01d86, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8082376
+      value: 0.45812848
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4b9637639c5b7594f856217fc4c01d86, type: 3}
       propertyPath: m_LocalRotation.z
@@ -553,11 +555,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4b9637639c5b7594f856217fc4c01d86, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5888566
+      value: -0.888886
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4b9637639c5b7594f856217fc4c01d86, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4b9637639c5b7594f856217fc4c01d86, type: 3}
       propertyPath: m_LocalScale.x
@@ -808,4 +810,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
