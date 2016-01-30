@@ -41,6 +41,7 @@ public class CameraMovement : MonoBehaviour
     public float _timeNeededToFindFlaw;
     public float _sensitivityOfViewPort;
     public float _SpeedOfRotation;
+    public int _nextScene;
     // Use this for initialization
     void Start()
     {
@@ -83,7 +84,7 @@ public class CameraMovement : MonoBehaviour
         if (_flawGO.Count == 0)
 		{ 
 			Cursor.visible = true;
-			SceneManager.LoadSceneAsync(1);
+			SceneManager.LoadSceneAsync(_nextScene);
 		}
 
     }
