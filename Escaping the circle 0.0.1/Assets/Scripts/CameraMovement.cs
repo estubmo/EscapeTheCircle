@@ -25,6 +25,8 @@ public class CameraMovement : MonoBehaviour
     private GazePointDataComponent gaze;
     private EyeXHost _eyexHost;
 
+	private ClueManager clueManager;
+
     private Vector3 inputPosition;
 
     private int _flawId = -1;
@@ -50,6 +52,7 @@ public class CameraMovement : MonoBehaviour
         _handAnim = gameObject.GetComponentInChildren<Animator>();
         gameObject.GetComponentInChildren<Renderer>().material.color = Color.Lerp(Color.white, Color.clear, 0.3f);
         _handTrans = _tr.GetChild(0);
+		clueManager = new ClueManager ();
     }
 
     // Update is called once per frame
@@ -74,6 +77,7 @@ public class CameraMovement : MonoBehaviour
 
         HandAnimation();
 
+		FindClue ();
 
         //----------Load next level when no Flaws left
         if (_flawGO.Count == 0)
@@ -146,30 +150,30 @@ public class CameraMovement : MonoBehaviour
     #region InputHandling
     public void isMouseActive()
     {
-        var eyeTrackerDeviceStatus = _eyexHost.EyeTrackingDeviceStatus;
-        if (eyeTrackerDeviceStatus == EyeXDeviceStatus.Tracking)
-        {
-            if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
-            {
-                mouseTimer = 0;
-            }
-            mouseTimer += Time.deltaTime;
-            if (mouseTimer >= mouseTimerLimit)
-            {
+		if (_eyexHost == null || !_eyexHost.enabled) {
+			mouseActive = true;
+			return;
+		}
+			
+		var eyeTrackerDeviceStatus = _eyexHost.EyeTrackingDeviceStatus;
+		if (eyeTrackerDeviceStatus == EyeXDeviceStatus.Tracking) {
+			if (Input.GetAxis ("Mouse X") != 0 || Input.GetAxis ("Mouse Y") != 0) {
+				mouseTimer = 0;
+			}
+			mouseTimer += Time.deltaTime;
+			if (mouseTimer >= mouseTimerLimit) {
 				Cursor.visible = false;
-                mouseActive = false;
-            }
-            else {
+				mouseActive = false;
+			} else {
 				Cursor.visible = true;
-                mouseActive = true;
-            }
-        }
-        else {
+				mouseActive = true;
+			}
+		} else {
 			Cursor.visible = true;
-            mouseActive = true;
-            mouseTimer = 0;
-            Debug.Log("NotTraking");
-        }
+			mouseActive = true;
+			mouseTimer = 0;
+			Debug.Log ("NotTraking");
+		}
 
         //Debug.Log ("mouseTimer: " + mouseTimer + " mouseActive: " + mouseActive); 
     }
@@ -209,6 +213,21 @@ public class CameraMovement : MonoBehaviour
         }
     }
     #endregion
+
+	#region FindClue
+	void FindClue()
+	{
+		if (!_isMoving)
+		{
+			if (_mouseRayHit.collider != null)
+			{
+				if (clueManager.isClue(_mouseRayHit.collider.gameObject)) {
+					Debug.Log ("isClue");
+				}
+			}
+		}
+	}
+	#endregion
 
     #region ViewPort Movement
     void ViewPortMovement()
