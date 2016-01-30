@@ -9,6 +9,11 @@ using UnityEngine.SceneManagement;
 public class ButtonActions : MonoBehaviour {
 
 	public int _PreviousScene;
+	private GazeAwareComponent _gazeAware;
+
+	void Start(){
+		_gazeAware = GetComponent<GazeAwareComponent> ();
+	}
 
     public void ChangeLevel(int IndexOfScene) {
         SceneManager.LoadScene(IndexOfScene);
@@ -18,11 +23,14 @@ public class ButtonActions : MonoBehaviour {
 		Application.Quit();
 	}
 	void Update () {
-		if(Input.GetButtonDown("Cancel"))
+		Debug.Log (_gazeAware.HasGaze);
+		if(Input.GetButtonDown("Cancel") || _gazeAware.HasGaze)
 		{
 			SceneManager.LoadScene(_PreviousScene);
 		}
 
 	}
+
+
 
 }

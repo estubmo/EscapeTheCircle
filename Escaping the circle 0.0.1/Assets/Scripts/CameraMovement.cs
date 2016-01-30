@@ -18,8 +18,8 @@ public class CameraMovement : MonoBehaviour
     private Ray _mouseToWorldRay;
     private RaycastHit _mouseRayHit;
 
-    private float mouseTimer = 2.5f;
-    private const float mouseTimerLimit = 3.0f;
+    private float mouseTimer = 0.0f;
+    private const float mouseTimerLimit = 0.5f;
     private bool mouseActive;
 
     private GazePointDataComponent gaze;
@@ -77,7 +77,10 @@ public class CameraMovement : MonoBehaviour
 
         //----------Load next level when no Flaws left
         if (_flawGO.Count == 0)
-        { SceneManager.LoadSceneAsync(1); }
+		{ 
+			Cursor.visible = true;
+			SceneManager.LoadSceneAsync(1);
+		}
 
     }
 
@@ -160,13 +163,16 @@ public class CameraMovement : MonoBehaviour
             mouseTimer += Time.deltaTime;
             if (mouseTimer >= mouseTimerLimit)
             {
+				Cursor.visible = false;
                 mouseActive = false;
             }
             else {
+				Cursor.visible = true;
                 mouseActive = true;
             }
         }
         else {
+			Cursor.visible = true;
             mouseActive = true;
             mouseTimer = 0;
             Debug.Log("NotTraking");
