@@ -48,6 +48,7 @@ public class CameraMovement : MonoBehaviour
         gaze = GetComponent<GazePointDataComponent>();
         _eyexHost = EyeXHost.GetInstance();
         _handAnim = gameObject.GetComponentInChildren<Animator>();
+        gameObject.GetComponentInChildren<Renderer>().material.color = Color.Lerp(Color.white, Color.clear, 0.3f);
         _handTrans = _tr.GetChild(0);
     }
 
@@ -96,8 +97,7 @@ public class CameraMovement : MonoBehaviour
         //Debug.Log(_averagePos.ToString() + " : " + _prevMousePosViewPort[_index].ToString());
         _timeAnim -= Time.deltaTime;
 
-
-        if (_handAnim.GetBool("ReachOut") && _timeAnim <= 0)
+        if (_handAnim.GetBool("ReachOut") && _handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
         { _handAnim.SetBool("ReachOut", false); }
 
         if (_timeAnim < -0.85f)
@@ -119,7 +119,7 @@ public class CameraMovement : MonoBehaviour
             _timeAnimStart = 0;
         }
         float _ang;
-        if (_handAnim.GetBool("ReachOut"))
+        if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
         {
             _ang = Angle
             (
@@ -139,6 +139,10 @@ public class CameraMovement : MonoBehaviour
         }
         if (float.IsNaN(_ang)) { _ang = 90f; }
         _ang += (_prevMousePosViewPort[_index].x - 0.5f) * 0.8f;
+        if(!_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
+        { _ang = -90 * Mathf.Deg2Rad; }
+        //Debug.Log(_timeAnim);
+
         _handTrans.localEulerAngles = new Vector3(31, 0, -_ang * Mathf.Rad2Deg - 90);
     }
     #endregion
