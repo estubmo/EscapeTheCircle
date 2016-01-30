@@ -23,6 +23,7 @@ public class CameraMovement : MonoBehaviour
 	private bool mouseActive;
 
 	private GazePointDataComponent gaze;
+	private EyeXHost _eyexHost;
 
 	private Vector3 inputPosition;
 
@@ -45,6 +46,7 @@ public class CameraMovement : MonoBehaviour
         _camera = Camera.main;
         _flawGO.AddRange(GameObject.FindGameObjectsWithTag("Flaw"));
 		gaze = GetComponent <GazePointDataComponent> ();
+		_eyexHost = EyeXHost.GetInstance ();
         _handAnim = gameObject.GetComponentInChildren<Animator>();
         _handTrans = _tr.GetChild(0);
     }
@@ -110,15 +112,22 @@ public class CameraMovement : MonoBehaviour
 
     #region InputHandling
     public void isMouseActive(){
-		if (Input.GetAxis ("Mouse X") != 0 || Input.GetAxis ("Mouse Y") != 0) {
-			mouseTimer = 0;
-		}
-		mouseTimer += Time.deltaTime;
-		if (mouseTimer >= mouseTimerLimit) {
-			mouseActive = false;
+		var eyeTrackerDeviceStatus = _eyexHost.EyeTrackingDeviceStatus;
+		if (eyeTrackerDeviceStatus == EyeXDeviceStatus.Tracking) {
+			if (Input.GetAxis ("Mouse X") != 0 || Input.GetAxis ("Mouse Y") != 0) {
+				mouseTimer = 0;
+			}
+			mouseTimer += Time.deltaTime;
+			if (mouseTimer >= mouseTimerLimit) {
+				mouseActive = false;
+			} else {
+				mouseActive = true;
+			}
 		} else {
 			mouseActive = true;
+			mouseTimer = 0;
 		}
+
 		//Debug.Log ("mouseTimer: " + mouseTimer + " mouseActive: " + mouseActive); 
 	}
 
