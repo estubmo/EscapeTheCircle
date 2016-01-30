@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeNeededToFindFlaw: 1.5
-  _sensitivityOfViewPort: 0.4
+  _sensitivityOfViewPort: 0.25
   _SpeedOfRotation: 75
 --- !u!1 &591574903
 GameObject:
