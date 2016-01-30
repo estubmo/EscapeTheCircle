@@ -29,18 +29,19 @@ public class CameraMovement : MonoBehaviour
 
     private Vector3 inputPosition;
 
-    private string _flawName;
-    private string _prevName;
-    private float _flawTimer;
+    private int _flawId = -1;
     private Vector2 _averagePos;
     private Vector2 _prevAveragePos;
     private float _timeAnim;
     private bool _isMoving;
     private float _timeAnimStart;
+    private GameObject _tagetFlaw;
+
 
     public float _timeNeededToFindFlaw;
     public float _sensitivityOfViewPort;
     public float _SpeedOfRotation;
+    public int _nextScene;
     // Use this for initialization
     void Start()
     {
@@ -83,7 +84,7 @@ public class CameraMovement : MonoBehaviour
         if (_flawGO.Count == 0)
 		{ 
 			Cursor.visible = true;
-			SceneManager.LoadSceneAsync(1);
+			SceneManager.LoadSceneAsync(_nextScene);
 		}
 
     }
@@ -100,7 +101,7 @@ public class CameraMovement : MonoBehaviour
             { _averagePos += new Vector2(_prevMousePosViewPort[i].x, _prevMousePosViewPort[i].y); }
             _averagePos /= (_prevMousePosViewPort.Length);
         }
-        if(_timeAnim < -1.2f)
+        if (_timeAnim < -1.2f)
         { _prevAveragePos = new Vector2(9999, 9999); }
         _timeAnim -= Time.deltaTime;
 
@@ -194,32 +195,22 @@ public class CameraMovement : MonoBehaviour
     #region FindFlaw
     void FindFlaw()
     {
-        if (!_isMoving)
+        if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
         {
             if (_mouseRayHit.collider != null)
             {
                 if (_mouseRayHit.collider.tag == "Flaw")
                 {
-                    if (_mouseRayHit.collider.name != _flawName || _flawTimer > _timeNeededToFindFlaw)
-                    {
-                        _flawName = _mouseRayHit.collider.name;
-                        _flawTimer = _timeNeededToFindFlaw;
-                    }
-                }
-                if (_flawName == _mouseRayHit.collider.name)
-                {
-                    _flawTimer -= Time.deltaTime;
-                }
-                else {
-                    _flawTimer += Time.deltaTime;
-                }
-                if (_flawTimer <= 0f)
-                {
-                    //Debug.Log ("Found Flaw");
-                    _flawGO.Remove(_mouseRayHit.collider.gameObject);
-                    Destroy(_mouseRayHit.collider.gameObject);
+                    _flawId = _mouseRayHit.collider.GetInstanceID();
+                    _tagetFlaw = _mouseRayHit.collider.gameObject;
                 }
             }
+        }
+        else if (_flawId > 0)
+        {
+            _flawGO.Remove(_tagetFlaw);
+            Destroy(_tagetFlaw);
+            _flawId = -1;
         }
     }
     #endregion
@@ -227,7 +218,7 @@ public class CameraMovement : MonoBehaviour
 	#region FindClue
 	void FindClue()
 	{
-		if (!_isMoving)
+		if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
 		{
 			if (_mouseRayHit.collider != null)
 			{
