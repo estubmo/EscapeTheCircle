@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Flaw
+  - Clue
   layers:
   - Default
   - TransparentFX
