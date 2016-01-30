@@ -12,9 +12,9 @@ public class CameraMovement : MonoBehaviour
     private Transform _handTrans;
 
     private List<GameObject> _flawGO = new List<GameObject>();
-    private Vector3[] _prevMousePos = new Vector3[12];
+    private Vector3[] _prevMousePos = new Vector3[24];
     private int _index = 0;
-    private Vector3[] _prevMousePosViewPort = new Vector3[12];
+    private Vector3[] _prevMousePosViewPort = new Vector3[24];
     private Ray _mouseToWorldRay;
     private RaycastHit _mouseRayHit;
 
@@ -52,7 +52,7 @@ public class CameraMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        //Loading array for both smoothening purpus, and to check if mouse/eyes are forcused on one spot
+        //----------Loading array for both smoothening purpus, and to check if mouse/eyes are forcused on one spot
         if (_index >= _prevMousePos.Length-1)
         { _index = 0; }
         else { _index++; }
@@ -60,56 +60,56 @@ public class CameraMovement : MonoBehaviour
 		_prevMousePos[_index] = _camera.ScreenToWorldPoint(getInputPosition ());
 		_prevMousePosViewPort[_index] = _camera.ScreenToViewportPoint(getInputPosition ());
 		_mouseToWorldRay = _camera.ScreenPointToRay(getInputPosition ());
-		//Debug.Log (getInputPosition ().ToString ());
         Physics.Raycast(_mouseToWorldRay, out _mouseRayHit, 100f);
         Debug.DrawRay(_mouseToWorldRay.origin, _mouseToWorldRay.direction, Color.red);
 
-        //Debug.Log(_mouseRayHit.collider.name);
 
+        //----------Standard Update Voids
         ViewPortMovement();
 
         FindFlaw();
+
+        HandAnimation();
         
+
+        //----------Load next level when no Flaws left
+        if (_flawGO.Count == 0)
+        { SceneManager.LoadSceneAsync(1); }
+
+    }
+
+    #region Animation
+    void HandAnimation()
+    {
         _averagePos = Vector2.zero;
         if (_isMoving)
         { _averagePos = new Vector2(9999, 9999); }
 
-        for (int i = 0; i < _prevMousePosViewPort.Length;i++)
-        {_averagePos += new Vector2(_prevMousePosViewPort[i].x,_prevMousePosViewPort[i].y);}
+        for (int i = 0; i < _prevMousePosViewPort.Length; i++)
+        { _averagePos += new Vector2(_prevMousePosViewPort[i].x, _prevMousePosViewPort[i].y); }
         _averagePos /= (_prevMousePosViewPort.Length);
 
         //Debug.Log(_averagePos.ToString() + " : " + _prevMousePosViewPort[_index].ToString());
         _timeAnim -= Time.deltaTime;
 
         if (_handAnim.GetBool("ReachOut") && _timeAnim <= 0) { _handAnim.SetBool("ReachOut", false); }
-        if (Vector2.Distance(_averagePos, new Vector2(_prevMousePosViewPort[_index].x,_prevMousePosViewPort[_index].y)) < 0.1f &&
-            !(Vector2.Distance(_averagePos,_prevAveragePos) < 0.1f))
-        { _handAnim.SetBool("ReachOut",true); _prevAveragePos = _averagePos; _timeAnim = 0.2f; Debug.Log("Hey"); }
+        if (Vector2.Distance(_averagePos, new Vector2(_prevMousePosViewPort[_index].x, _prevMousePosViewPort[_index].y)) < 0.1f &&
+            !(Vector2.Distance(_averagePos, _prevAveragePos) < 0.1f))
+        { _handAnim.SetBool("ReachOut", true); _prevAveragePos = _averagePos; _timeAnim = 0.01f; }
 
         float _ang = Angle
             (
-                _mouseRayHit.barycentricCoordinate.z - _handTrans.position.z,
-                Magnitude(_mouseRayHit.barycentricCoordinate.z - _handTrans.position.z,_mouseRayHit.barycentricCoordinate.x - _handTrans.position.x),
-                _mouseRayHit.barycentricCoordinate.x - _handTrans.position.x
+                _prevMousePosViewPort[_index].x - 0.5f,
+                Magnitude(_prevMousePosViewPort[_index].x - 0.5f, _prevMousePosViewPort[_index].y),
+                _prevMousePosViewPort[_index].y
             );
-            
-            //Vector2.Angle(new Vector2(_handTrans.position.x, _handTrans.position.z),new Vector2(_mouseRayHit.barycentricCoordinate.x, _mouseRayHit.barycentricCoordinate.z));
-        //Debug.Log(-_ang * Mathf.Rad2Deg);
-
-        //_handTrans.Rotate(new Vector3(0, -_ang * Mathf.Rad2Deg, 0), Space.World);
-
-        //_handTrans.localEulerAngles = new Vector3(31,0,-_ang*Mathf.Rad2Deg);
-
-        //_handTrans.localRotation = Quaternion.LookRotation(Vector3.RotateTowards(_handTrans.forward, _mouseRayHit.barycentricCoordinate - _handTrans.localPosition, 10f,0));
-        if (_flawGO.Count == 0)
-        {
-            SceneManager.LoadSceneAsync(1);
-        }
-
+        if (float.IsNaN(_ang)) { _ang = 90f; }
+        _handTrans.localEulerAngles = new Vector3(31, 0, -_ang * Mathf.Rad2Deg - 90);
     }
+    #endregion
 
-	#region InputHandling
-	public void isMouseActive(){
+    #region InputHandling
+    public void isMouseActive(){
 		if (Input.GetAxis ("Mouse X") != 0 || Input.GetAxis ("Mouse Y") != 0) {
 			mouseTimer = 0;
 		}
@@ -185,7 +185,7 @@ public class CameraMovement : MonoBehaviour
     }
     #endregion
 
-
+    #region MathFunctions
     public float Angle(float A, float B, float C)
     {
         return (
@@ -211,4 +211,5 @@ public class CameraMovement : MonoBehaviour
              Mathf.Pow(B, 2)
              );
     }
+    #endregion
 }
