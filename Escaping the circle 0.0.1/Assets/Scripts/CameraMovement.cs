@@ -148,7 +148,7 @@ public class CameraMovement : MonoBehaviour
 				_flawTimer += Time.deltaTime;
 			}
 			if (_flawTimer <= 0f) {
-				Debug.Log ("Found Flaw");
+				//Debug.Log ("Found Flaw");
 				_flawGO.Remove (_mouseRayHit.collider.gameObject);
 				Destroy (_mouseRayHit.collider.gameObject);
 			}
