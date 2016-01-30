@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f464aae92415c4eb1572b69a26cba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeNeededToFindFlaw: 1
+  _timeNeededToFindFlaw: 1.4
   _sensitivityOfViewPort: 0.1
   _SpeedOfRotation: 50
 --- !u!114 &331671781
