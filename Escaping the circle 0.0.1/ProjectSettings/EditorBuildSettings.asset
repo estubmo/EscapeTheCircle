@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
   - enabled: 1
-    path: Assets/credits.unity
+    path: Assets/Scenes/credits.unity
   - enabled: 1
-    path: Assets/Level1TheYoungOne.unity
+    path: Assets/Scenes/Level1TheYoungOne.unity
   - enabled: 1
-    path: Assets/Options.unity
+    path: Assets/Scenes/Options.unity
   - enabled: 1
-    path: Assets/HowToPlay.unity
+    path: Assets/Scenes/HowToPlay.unity
