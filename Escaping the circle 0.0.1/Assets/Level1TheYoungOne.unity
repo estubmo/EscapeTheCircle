@@ -98,6 +98,7 @@ GameObject:
   - 124: {fileID: 331671776}
   - 81: {fileID: 331671775}
   - 114: {fileID: 331671780}
+  - 114: {fileID: 331671781}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -169,7 +170,8 @@ Transform:
   m_LocalRotation: {x: 0.49194038, y: 0, z: 0, w: 0.8706289}
   m_LocalPosition: {x: -0, y: 0.932, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1702043890}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &331671780
@@ -183,9 +185,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f464aae92415c4eb1572b69a26cba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeNeededToFindFlaw: 1.5
-  _sensitivityOfViewPort: 0.25
-  _SpeedOfRotation: 75
+  _timeNeededToFindFlaw: 1
+  _sensitivityOfViewPort: 0.1
+  _SpeedOfRotation: 50
+--- !u!114 &331671781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 331671774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea512e96fc964f48b2fc6ddeffff73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gazePointDataMode: 2
 --- !u!1 &591574903
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,8 +345,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1702043890}
   - 212: {fileID: 1702043889}
+  - 95: {fileID: 1702043891}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,12 +389,29 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1702043888}
-  m_LocalRotation: {x: 0.7071068, y: 2.842171e-14, z: 2.842171e-14, w: 0.7071067}
-  m_LocalPosition: {x: 0.12, y: 0.26, z: 0.28}
-  m_LocalScale: {x: 0.08344886, y: 0.08344886, z: 0.08344886}
+  m_LocalRotation: {x: 0.26777318, y: 0, z: 0, w: 0.96348196}
+  m_LocalPosition: {x: 0.031, y: -0.404, z: 0.829}
+  m_LocalScale: {x: 0.08344886, y: 0.08344884, z: 0.08344884}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 331671779}
+  m_RootOrder: 0
+--- !u!95 &1702043891
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1702043888}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54ba910bbbec0bb4789ff8b6aa40534f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1768099688
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +470,7 @@ Transform:
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!135 &1768099691
 SphereCollider:
   m_ObjectHideFlags: 0

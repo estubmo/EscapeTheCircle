@@ -18,7 +18,7 @@ public class CameraMovement : MonoBehaviour
     private Ray _mouseToWorldRay;
     private RaycastHit _mouseRayHit;
 
-	private float mouseTimer;
+	private float mouseTimer = 2.5f;
 	private const float mouseTimerLimit = 3.0f;
 	private bool mouseActive;
 
@@ -60,7 +60,7 @@ public class CameraMovement : MonoBehaviour
 		_prevMousePos[_index] = _camera.ScreenToWorldPoint(getInputPosition ());
 		_prevMousePosViewPort[_index] = _camera.ScreenToViewportPoint(getInputPosition ());
 		_mouseToWorldRay = _camera.ScreenPointToRay(getInputPosition ());
-		Debug.Log (getInputPosition ().ToString ());
+		//Debug.Log (getInputPosition ().ToString ());
         Physics.Raycast(_mouseToWorldRay, out _mouseRayHit, 100f);
         Debug.DrawRay(_mouseToWorldRay.origin, _mouseToWorldRay.direction, Color.red);
 
@@ -86,9 +86,22 @@ public class CameraMovement : MonoBehaviour
             !(Vector2.Distance(_averagePos,_prevAveragePos) < 0.1f))
         { _handAnim.SetBool("ReachOut",true); _prevAveragePos = _averagePos; _timeAnim = 0.2f; Debug.Log("Hey"); }
 
-        //_handTrans.rotation = Quaternion.LookRotation(Vector3.RotateTowards(_handTrans.forward, _mouseRayHit.barycentricCoordinate - _handTrans.position, 10f,0));
-        //_handTrans.eulerAngles = new Vector3(_handTrans.eulerAngles.x+90,_handTrans.eulerAngles.y,_handTrans.eulerAngles.z);
-        if(_flawGO.Count == 0)
+        float _ang = Angle
+            (
+                _mouseRayHit.barycentricCoordinate.z - _handTrans.position.z,
+                Magnitude(_mouseRayHit.barycentricCoordinate.z - _handTrans.position.z,_mouseRayHit.barycentricCoordinate.x - _handTrans.position.x),
+                _mouseRayHit.barycentricCoordinate.x - _handTrans.position.x
+            );
+            
+            //Vector2.Angle(new Vector2(_handTrans.position.x, _handTrans.position.z),new Vector2(_mouseRayHit.barycentricCoordinate.x, _mouseRayHit.barycentricCoordinate.z));
+        //Debug.Log(-_ang * Mathf.Rad2Deg);
+
+        //_handTrans.Rotate(new Vector3(0, -_ang * Mathf.Rad2Deg, 0), Space.World);
+
+        //_handTrans.localEulerAngles = new Vector3(31,0,-_ang*Mathf.Rad2Deg);
+
+        //_handTrans.localRotation = Quaternion.LookRotation(Vector3.RotateTowards(_handTrans.forward, _mouseRayHit.barycentricCoordinate - _handTrans.localPosition, 10f,0));
+        if (_flawGO.Count == 0)
         {
             SceneManager.LoadSceneAsync(1);
         }
@@ -157,24 +170,45 @@ public class CameraMovement : MonoBehaviour
         {
             _tr.Rotate(Vector3.up * Time.deltaTime * _SpeedOfRotation * -1 * ((_sensitivityOfViewPort - _prevMousePosViewPort[_index].x) / _sensitivityOfViewPort), Space.World);
             //Debug.Log("GoLeft");
+            _isMoving = true;
         }
         if (_prevMousePosViewPort[_index].y > 1f - _sensitivityOfViewPort) //Up
         {
             //Debug.Log("GoUp");
+            _isMoving = true;
         }
         if (_prevMousePosViewPort[_index].y < _sensitivityOfViewPort) //Down
         {
             //Debug.Log("GoDown");
             _isMoving = true;
         }
-        if (_prevMousePosViewPort[_index].y > 1f - _sensitivityOfViewPort) //Up
-        {
-            _isMoving = true;
-        }
-        if (_prevMousePosViewPort[_index].y < _sensitivityOfViewPort) //Down
-        {
-            _isMoving = true;
-        }
     }
     #endregion
+
+
+    public float Angle(float A, float B, float C)
+    {
+        return (
+                Mathf.Acos
+                (
+                    (
+                        Mathf.Pow(A, 2) +
+                        Mathf.Pow(B, 2) -
+                        Mathf.Pow(C, 2)
+                    )
+                    /
+                    (2 * A * B)
+                )
+                * -Mathf.Sign(C));
+    }
+
+    public float Magnitude(float A, float B)
+    {
+        return Mathf.Sqrt
+             (
+             Mathf.Pow(A, 2)
+             +
+             Mathf.Pow(B, 2)
+             );
+    }
 }
