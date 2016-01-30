@@ -64,7 +64,7 @@ public class CameraMovement : MonoBehaviour
         _mouseToWorldRay = _camera.ScreenPointToRay(getInputPosition());
         Physics.Raycast(_mouseToWorldRay, out _mouseRayHit, 100f);
         Debug.DrawRay(_mouseToWorldRay.origin, _mouseToWorldRay.direction, Color.red);
-
+        Debug.Log(getInputPosition());
 
         //----------Standard Update Voids
         ViewPortMovement();
