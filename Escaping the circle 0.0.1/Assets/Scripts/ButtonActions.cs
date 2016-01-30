@@ -23,7 +23,7 @@ public class ButtonActions : MonoBehaviour {
 		Application.Quit();
 	}
 	void Update () {
-		Debug.Log (_gazeAware.HasGaze);
+		//Debug.Log (_gazeAware.HasGaze);
 		if(Input.GetButtonDown("Cancel") || _gazeAware.HasGaze)
 		{
 			SceneManager.LoadScene(_PreviousScene);

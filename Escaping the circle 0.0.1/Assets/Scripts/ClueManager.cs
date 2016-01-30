@@ -4,30 +4,49 @@ using System.Collections.Generic;
 
 public class ClueManager : MonoBehaviour {
 
-	private List<GameObject> clueOrder;
-	private List<GameObject> clues;
+	private string clueTag;
+	private string clueContainerTag;
+	private List<GameObject> playerClueOrder;
+	private GameObject clueContainer;
+	private List<GameObject> cluesCorrectOrder;
 
 	public ClueManager() {
-		clueOrder = new List<GameObject> ();
-		clues = new List<GameObject>(GameObject.FindGameObjectsWithTag ("Clue"));
+		clueTag = "Clue";
+		clueContainerTag = "ClueContainer";
+		playerClueOrder = new List<GameObject> ();
+		clueContainer = GameObject.FindGameObjectWithTag (clueContainerTag);
+		cluesCorrectOrder = new List<GameObject> (GameObject.FindGameObjectsWithTag (clueTag)).Sort ();
 	}
 
-	public List<GameObject> getSceneClues() {
-		return clues;
+	public bool isClue(GameObject obj) {
+		return obj.tag == clueTag;
 	}
 
 	public void addPlayerClue(GameObject clue) {
-		if (!clueOrder.Contains(clue))
-			clueOrder.Add (clue);
+		if (!playerClueOrder.Contains (clue)) {
+			playerClueOrder.Add (clue);
+			Debug.Log ("Clue added: " + clue.name);
+		}
 	}
 
-	public bool checkClueOrder() {
-		if (clues.Count == clueOrder.Count){
-			for (var i=0; i < clues.Count; i++){
-				if (clues[i] != clueOrder[i])
+	public GameObject getClueContainer(){
+		return clueContainer;
+	}
+
+	public bool isClueOrderCorrect() {
+		var clueCount = clueContainer.transform.childCount;
+		var isCorrect = false;
+		if (clueCount == playerClueOrder.Count){
+			isCorrect = true;
+			for (var i=0; i<clueCount; i++) {
+				if (cluesCorrectOrder[i] == playerClueOrder [i]) {
+					Debug.Log (cluesCorrectOrder[i] + " - " + playerClueOrder [i]);
+
+					Debug.Log ("Order not correct");
 					return false;
+				}
 			}
 		}
-		return true;
+		return isCorrect;
 	}
 }

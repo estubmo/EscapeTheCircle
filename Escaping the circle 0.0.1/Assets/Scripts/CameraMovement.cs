@@ -25,20 +25,23 @@ public class CameraMovement : MonoBehaviour
     private GazePointDataComponent gaze;
     private EyeXHost _eyexHost;
 
+	private ClueManager clueManager;
+
     private Vector3 inputPosition;
 
-    private string _flawName;
-    private string _prevName;
-    private float _flawTimer;
+    private int _flawId = -1;
     private Vector2 _averagePos;
     private Vector2 _prevAveragePos;
     private float _timeAnim;
     private bool _isMoving;
     private float _timeAnimStart;
+    private GameObject _tagetFlaw;
+
 
     public float _timeNeededToFindFlaw;
     public float _sensitivityOfViewPort;
     public float _SpeedOfRotation;
+    public int _nextScene;
     // Use this for initialization
     void Start()
     {
@@ -50,6 +53,7 @@ public class CameraMovement : MonoBehaviour
         _handAnim = gameObject.GetComponentInChildren<Animator>();
         gameObject.GetComponentInChildren<Renderer>().material.color = Color.Lerp(Color.white, Color.clear, 0.3f);
         _handTrans = _tr.GetChild(0);
+		clueManager = new ClueManager ();
     }
 
     // Update is called once per frame
@@ -74,12 +78,13 @@ public class CameraMovement : MonoBehaviour
 
         HandAnimation();
 
+		FindClue ();
 
         //----------Load next level when no Flaws left
         if (_flawGO.Count == 0)
 		{ 
 			Cursor.visible = true;
-			SceneManager.LoadSceneAsync(1);
+			SceneManager.LoadSceneAsync(_nextScene);
 		}
 
     }
@@ -96,8 +101,8 @@ public class CameraMovement : MonoBehaviour
             { _averagePos += new Vector2(_prevMousePosViewPort[i].x, _prevMousePosViewPort[i].y); }
             _averagePos /= (_prevMousePosViewPort.Length);
         }
-
-        //Debug.Log(_averagePos.ToString() + " : " + _prevMousePosViewPort[_index].ToString());
+        if (_timeAnim < -1.2f)
+        { _prevAveragePos = new Vector2(9999, 9999); }
         _timeAnim -= Time.deltaTime;
 
         if (_handAnim.GetBool("ReachOut") && _handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
@@ -114,13 +119,14 @@ public class CameraMovement : MonoBehaviour
         if (_timeAnimStart < 0)
         { _timeAnimStart = 0; }
 
-        if (_timeAnimStart > 0.5f)
+        if (_timeAnimStart > 0.5f && !(_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim")))
         {
             _handAnim.SetBool("ReachOut", true);
             _prevAveragePos = _averagePos;
             _timeAnim = 1f;
             _timeAnimStart = 0;
         }
+
         float _ang;
         if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
         {
@@ -130,21 +136,13 @@ public class CameraMovement : MonoBehaviour
                 Magnitude(_prevAveragePos.x - 0.5f, _prevAveragePos.y),
                 _prevAveragePos.y
             );
+            if (float.IsNaN(_ang)) { _ang = 90f; }
+            _ang += (_prevAveragePos.x - 0.5f) * 0.8f;
         }
         else
         {
-            _ang = Angle
-                (
-                    _prevMousePosViewPort[_index].x - 0.5f,
-                    Magnitude(_prevMousePosViewPort[_index].x - 0.5f, _prevMousePosViewPort[_index].y),
-                    _prevMousePosViewPort[_index].y
-                );
+            _ang = -90 * Mathf.Deg2Rad;
         }
-        if (float.IsNaN(_ang)) { _ang = 90f; }
-        _ang += (_prevMousePosViewPort[_index].x - 0.5f) * 0.8f;
-        if(!_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
-        { _ang = -90 * Mathf.Deg2Rad; }
-        //Debug.Log(_timeAnim);
 
         _handTrans.localEulerAngles = new Vector3(31, 0, -_ang * Mathf.Rad2Deg - 90);
     }
@@ -153,30 +151,30 @@ public class CameraMovement : MonoBehaviour
     #region InputHandling
     public void isMouseActive()
     {
-        var eyeTrackerDeviceStatus = _eyexHost.EyeTrackingDeviceStatus;
-        if (eyeTrackerDeviceStatus == EyeXDeviceStatus.Tracking)
-        {
-            if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
-            {
-                mouseTimer = 0;
-            }
-            mouseTimer += Time.deltaTime;
-            if (mouseTimer >= mouseTimerLimit)
-            {
+		if (_eyexHost == null || !_eyexHost.enabled) {
+			mouseActive = true;
+			return;
+		}
+			
+		var eyeTrackerDeviceStatus = _eyexHost.EyeTrackingDeviceStatus;
+		if (eyeTrackerDeviceStatus == EyeXDeviceStatus.Tracking) {
+			if (Input.GetAxis ("Mouse X") != 0 || Input.GetAxis ("Mouse Y") != 0) {
+				mouseTimer = 0;
+			}
+			mouseTimer += Time.deltaTime;
+			if (mouseTimer >= mouseTimerLimit) {
 				Cursor.visible = false;
-                mouseActive = false;
-            }
-            else {
+				mouseActive = false;
+			} else {
 				Cursor.visible = true;
-                mouseActive = true;
-            }
-        }
-        else {
+				mouseActive = true;
+			}
+		} else {
 			Cursor.visible = true;
-            mouseActive = true;
-            mouseTimer = 0;
-            Debug.Log("NotTraking");
-        }
+			mouseActive = true;
+			mouseTimer = 0;
+			Debug.Log ("NotTraking");
+		}
 
         //Debug.Log ("mouseTimer: " + mouseTimer + " mouseActive: " + mouseActive); 
     }
@@ -197,39 +195,54 @@ public class CameraMovement : MonoBehaviour
     #region FindFlaw
     void FindFlaw()
     {
-        if (!_isMoving)
+        if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
         {
             if (_mouseRayHit.collider != null)
             {
                 if (_mouseRayHit.collider.tag == "Flaw")
                 {
-                    if (_mouseRayHit.collider.name != _flawName || _flawTimer > _timeNeededToFindFlaw)
-                    {
-                        _flawName = _mouseRayHit.collider.name;
-                        _flawTimer = _timeNeededToFindFlaw;
-                    }
-                }
-                if (_flawName == _mouseRayHit.collider.name)
-                {
-                    _flawTimer -= Time.deltaTime;
-                }
-                else {
-                    _flawTimer += Time.deltaTime;
-                }
-                if (_flawTimer <= 0f)
-                {
-                    //Debug.Log ("Found Flaw");
-                    _flawGO.Remove(_mouseRayHit.collider.gameObject);
-                    Destroy(_mouseRayHit.collider.gameObject);
+                    _flawId = _mouseRayHit.collider.GetInstanceID();
+                    _tagetFlaw = _mouseRayHit.collider.gameObject;
                 }
             }
+        }
+        else if (_flawId > 0)
+        {
+            _flawGO.Remove(_tagetFlaw);
+            Destroy(_tagetFlaw);
+            _flawId = -1;
         }
     }
     #endregion
 
+	#region FindClue
+	void FindClue()
+	{
+		if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
+		{
+			if (_mouseRayHit.collider != null)
+			{
+				var obj = _mouseRayHit.collider.gameObject;
+				if (clueManager.isClue(obj)) {
+					clueManager.addPlayerClue (obj);
+					obj.GetComponentInChildren<Light> (true).enabled = true;
+					if (clueManager.isClueOrderCorrect ()) {
+						Debug.Log ("Victory");
+					} else {
+						/*new List<Light>(clueManager.getClueContainer ()
+							.GetComponentsInChildren<Light> ()).ForEach(x => Destroy(x));*/
+					}
+				}
+			}
+		}
+	}
+	#endregion
+
     #region ViewPort Movement
     void ViewPortMovement()
     {
+        if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
+        { return; }
         _isMoving = false;
         if (_prevMousePosViewPort[_index].x > 1f - _sensitivityOfViewPort) //RightSide
         {
