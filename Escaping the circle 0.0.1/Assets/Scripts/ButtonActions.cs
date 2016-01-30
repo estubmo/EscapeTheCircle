@@ -8,9 +8,21 @@ using UnityEngine.SceneManagement;
 
 public class ButtonActions : MonoBehaviour {
 
+	public int _PreviousScene;
+
     public void ChangeLevel(int IndexOfScene) {
         SceneManager.LoadScene(IndexOfScene);
     } 
 
+	public void Exit () {
+		Application.Quit();
+	}
+	void Update () {
+		if(Input.GetButtonDown("Cancel"))
+		{
+			SceneManager.LoadScene(_PreviousScene);
+		}
+
+	}
 
 }

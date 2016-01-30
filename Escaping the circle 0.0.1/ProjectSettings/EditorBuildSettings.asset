@@ -11,3 +11,7 @@ EditorBuildSettings:
     path: Assets/credits.unity
   - enabled: 1
     path: Assets/Level1TheYoungOne.unity
+  - enabled: 1
+    path: Assets/Options.unity
+  - enabled: 1
+    path: Assets/HowToPlay.unity
