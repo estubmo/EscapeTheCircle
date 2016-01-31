@@ -11,6 +11,7 @@ public class CameraMovement : MonoBehaviour
     public float _SpeedOfRotation;
     public int _nextScene;
     public GameObject Circle;
+	public bool puzzleSolved = false;
 
     private Transform _tr;
     private Camera _camera;
@@ -60,6 +61,9 @@ public class CameraMovement : MonoBehaviour
         gameObject.GetComponentInChildren<Renderer>().material.color = Color.Lerp(Color.white, Color.clear, 0.3f);
         _handTrans = _tr.GetChild(0);
 		clueManager = new ClueManager ();
+		if (GameObject.FindGameObjectsWithTag ("Clue").Length < 1) {
+			puzzleSolved = true;
+		}
 
         GameObject _fade = new GameObject("Fadeout");
         Texture2D _tex2D = new Texture2D(1,1);
@@ -251,7 +255,7 @@ public class CameraMovement : MonoBehaviour
             if (_prevMouseRayHit.collider != null)
             {
                 Debug.Log("Hit: " + _prevMouseRayHit.collider.name);
-                if (_prevMouseRayHit.collider.tag == "Flaw")
+				if (_prevMouseRayHit.collider.tag == "Flaw" && puzzleSolved)
                 {
                     _flawId = _prevMouseRayHit.collider.name;
                     _tagetFlaw = _prevMouseRayHit.collider.gameObject;
@@ -281,6 +285,7 @@ public class CameraMovement : MonoBehaviour
                         if(clueManager.playerClueOrder.Count == clueManager.clueContainer.transform.childCount)
 						if (clueManager.isClueOrderCorrect ()) {
 							Debug.Log ("Victory");
+							puzzleSolved = true;
 							var lights = clueManager.getClueContainer ().GetComponentsInChildren<Light> ();
                             //_clueLighting = true;
                             if (_timerClue <= 0f)
@@ -293,6 +298,7 @@ public class CameraMovement : MonoBehaviour
 							// GET TO THE CHOPPA! (fault lights up)
 						} else {
 							Debug.Log ("Fail");
+							puzzleSolved = false;
 							var lights = clueManager.getClueContainer ().GetComponentsInChildren<Light> ();
                             _clueLighting = true;
                             if (_timerClue <= 0f)
