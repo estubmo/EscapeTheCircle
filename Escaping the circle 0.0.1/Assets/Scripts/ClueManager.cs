@@ -6,8 +6,8 @@ public class ClueManager : MonoBehaviour {
 
 	private string clueTag;
 	private string clueContainerTag;
-	private List<GameObject> playerClueOrder;
-	private GameObject clueContainer;
+	public List<GameObject> playerClueOrder;
+	public GameObject clueContainer;
 	private GameObject[] cluesCorrectOrder;
 	private List<string> corrList;
 
@@ -37,11 +37,19 @@ public class ClueManager : MonoBehaviour {
 		return clueContainer;
 	}
 
+    public void ResetPlayerClues()
+    {
+        playerClueOrder.Clear();
+    }
+
 	public bool isClueOrderCorrect(){
 		var isCorrect = true;
 		for (var i = 0; i < clueContainer.transform.childCount; i++) {
-			if (clueContainer.transform.GetChild (i).GetChild(0).name != playerClueOrder [i].name) {
-				
+            if(i >= playerClueOrder.Count)
+            { isCorrect = false; break; }
+
+			if (clueContainer.transform.GetChild (i).GetChild(0).name != playerClueOrder [i].name)
+            {
 				isCorrect = false;
 			}
 		}
