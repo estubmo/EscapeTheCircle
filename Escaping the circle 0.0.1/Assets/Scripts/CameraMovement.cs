@@ -241,8 +241,8 @@ public class CameraMovement : MonoBehaviour
             return Input.mousePosition;
         }
         else {
-            if (gaze.LastGazePoint.Screen.x >= 0 && gaze.LastGazePoint.Screen.x <= Screen.width &&
-                gaze.LastGazePoint.Screen.y >= 0 && gaze.LastGazePoint.Screen.y <= Screen.height)
+            if (gaze.LastGazePoint.Screen.x >= -200 && gaze.LastGazePoint.Screen.x <= Screen.width+200 &&
+                gaze.LastGazePoint.Screen.y >= -200 && gaze.LastGazePoint.Screen.y <= Screen.height+200)
             {
                 return new Vector3(gaze.LastGazePoint.Screen.x, gaze.LastGazePoint.Screen.y, 0);
             }
