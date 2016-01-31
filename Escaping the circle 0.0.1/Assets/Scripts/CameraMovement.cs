@@ -230,15 +230,36 @@ public class CameraMovement : MonoBehaviour
 						obj.GetComponentInChildren<Light> (true).enabled = true;
 						if (clueManager.isClueOrderCorrect ()) {
 							Debug.Log ("Victory");
+							var lights = clueManager.getClueContainer ().GetComponentsInChildren<Light> ();
+							foreach (var l in lights) {
+								l.color = Color.green;
+							}
+							Sleepy ();
+							foreach (var l in lights) {
+								l.enabled = false;
+							}
 						} else {
 							Debug.Log ("Fail");
-
+							var lights = clueManager.getClueContainer ().GetComponentsInChildren<Light> ();
+							foreach (var l in lights) {
+								l.color = Color.red;
+							}
+							Sleepy ();
+							foreach (var l in lights) {
+								l.enabled = false;
+							}
 						}
 					}
 				}
 			}
 		}
 	}
+
+	IEnumerator Sleepy()
+	{
+		yield return new WaitForSeconds(3);
+	}
+
 	#endregion
 
     #region ViewPort Movement
