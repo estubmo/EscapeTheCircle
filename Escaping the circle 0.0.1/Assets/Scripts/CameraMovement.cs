@@ -139,23 +139,43 @@ public class CameraMovement : MonoBehaviour
 
     #region Animation
     void HandAnimation()
-    {   
+    {
+        if (_handAnim.GetBool("ReachOut") && _handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
+        { _handAnim.SetBool("ReachOut", false); }
 
-        _averagePos = Vector2.zero;
-        if (_isMoving)
-        { _averagePos = new Vector2(9999, 9999); _prevAveragePos = new Vector2(9999, 9999); }
+        float _ang;
+        if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
+        {
+            _ang = Angle
+            (
+                _prevAveragePos.x - 0.5f,
+                Magnitude(_prevAveragePos.x - 0.5f, _prevAveragePos.y),
+                _prevAveragePos.y
+            );
+            if (float.IsNaN(_ang)) { _ang = 90f; }
+            _ang += (_prevAveragePos.x - 0.5f) * 0.8f;
+        }
         else
         {
-            for (int i = 0; i < _prevMousePosViewPort.Length; i++)
-            { _averagePos += new Vector2(_prevMousePosViewPort[i].x, _prevMousePosViewPort[i].y); }
-            _averagePos /= (_prevMousePosViewPort.Length);
+            _ang = -90 * Mathf.Deg2Rad;
         }
+
+        _averagePos = Vector2.zero;
+
+        _handTrans.localEulerAngles = new Vector3(31, 0, -_ang * Mathf.Rad2Deg - 90);
+
+        if (_isMoving) // Case moving
+        { return; }
+
+
+        for (int i = 0; i < _prevMousePosViewPort.Length; i++)
+        { _averagePos += new Vector2(_prevMousePosViewPort[i].x, _prevMousePosViewPort[i].y); }
+        _averagePos /= (_prevMousePosViewPort.Length);
         if (_timeAnim < -1.2f)
         { _prevAveragePos = new Vector2(9999, 9999); }
         _timeAnim -= Time.deltaTime;
 
-        if (_handAnim.GetBool("ReachOut") && _handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
-        { _handAnim.SetBool("ReachOut", false); }
+        
 
         if (_timeAnim < -0.85f)
         {
@@ -176,25 +196,6 @@ public class CameraMovement : MonoBehaviour
             _timeAnim = 1f;
             _timeAnimStart = 0;
         }
-
-        float _ang;
-        if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
-        {
-            _ang = Angle
-            (
-                _prevAveragePos.x - 0.5f,
-                Magnitude(_prevAveragePos.x - 0.5f, _prevAveragePos.y),
-                _prevAveragePos.y
-            );
-            if (float.IsNaN(_ang)) { _ang = 90f; }
-            _ang += (_prevAveragePos.x - 0.5f) * 0.8f;
-        }
-        else
-        {
-            _ang = -90 * Mathf.Deg2Rad;
-        }
-
-        _handTrans.localEulerAngles = new Vector3(31, 0, -_ang * Mathf.Rad2Deg - 90);
     }
     #endregion
 

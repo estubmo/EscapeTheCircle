@@ -189,6 +189,7 @@ MonoBehaviour:
   _sensitivityOfViewPort: 0.2
   _SpeedOfRotation: 50
   _nextScene: 6
+  Circle: {fileID: 0}
 --- !u!114 &331671781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,4 +729,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2035b4803bf5d3346ab61bb147bd9499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeToFindFlaw: 0

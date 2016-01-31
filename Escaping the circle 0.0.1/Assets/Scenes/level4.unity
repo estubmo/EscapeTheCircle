@@ -186,9 +186,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeNeededToFindFlaw: 1.4
-  _sensitivityOfViewPort: 0.1
+  _sensitivityOfViewPort: 0.2
   _SpeedOfRotation: 50
   _nextScene: 1
+  Circle: {fileID: 0}
 --- !u!114 &331671781
 MonoBehaviour:
   m_ObjectHideFlags: 0
