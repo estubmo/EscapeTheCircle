@@ -218,19 +218,21 @@ public class CameraMovement : MonoBehaviour
 	#region FindClue
 	void FindClue()
 	{
-		if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
-		{
-			if (_mouseRayHit.collider != null)
+		if (GameObject.FindGameObjectWithTag("Clue") != null){
+			if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
 			{
-				var obj = _mouseRayHit.collider.gameObject;
-				if (clueManager.isClue(obj)) {
-					clueManager.addPlayerClue (obj);
-					obj.GetComponentInChildren<Light> (true).enabled = true;
-					if (clueManager.isClueOrderCorrect ()) {
-						Debug.Log ("Victory");
-					} else {
-						/*new List<Light>(clueManager.getClueContainer ()
+				if (_mouseRayHit.collider != null) {
+					var obj = _mouseRayHit.collider.gameObject;
+					if (clueManager.isClue (obj)) {
+						clueManager.addPlayerClue (obj);
+						obj.GetComponentInChildren<Light> (true).enabled = true;
+						if (clueManager.isClueOrderCorrect ()) {
+							Debug.Log ("Victory");
+						} else {
+							Debug.Log ("Fail");
+							/*new List<Light>(clueManager.getClueContainer ()
 							.GetComponentsInChildren<Light> ()).ForEach(x => Destroy(x));*/
+						}
 					}
 				}
 			}

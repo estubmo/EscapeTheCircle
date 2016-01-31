@@ -153,7 +153,7 @@ GameObject:
   - 4: {fileID: 275239130}
   - 212: {fileID: 275239129}
   m_Layer: 0
-  m_Name: Front
+  m_Name: 2 Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -315,7 +315,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 331671774}
   m_LocalRotation: {x: 0.49194038, y: 0, z: 0, w: 0.8706289}
-  m_LocalPosition: {x: -0, y: 0.932, z: 0}
+  m_LocalPosition: {x: -0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1702043890}
@@ -335,6 +335,7 @@ MonoBehaviour:
   _timeNeededToFindFlaw: 1.4
   _sensitivityOfViewPort: 0.1
   _SpeedOfRotation: 50
+  _nextScene: 0
 --- !u!114 &331671781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,7 +469,7 @@ GameObject:
   - 4: {fileID: 811727216}
   - 212: {fileID: 811727215}
   m_Layer: 0
-  m_Name: Left
+  m_Name: 1 Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -740,7 +741,7 @@ GameObject:
   - 4: {fileID: 1605686305}
   - 212: {fileID: 1605686304}
   m_Layer: 0
-  m_Name: Right
+  m_Name: 0 Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
