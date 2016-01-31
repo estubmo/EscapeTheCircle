@@ -39,9 +39,14 @@ public class CameraMovement : MonoBehaviour
     private GameObject _tagetFlaw;
     private float _timerClue = -1f;
     private bool _clueLighting;
+    private SpriteRenderer _fadeout;
+    private SpriteRenderer _fadeout2;
 
+    void Awake()
+    {
 
-   
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -54,6 +59,19 @@ public class CameraMovement : MonoBehaviour
         gameObject.GetComponentInChildren<Renderer>().material.color = Color.Lerp(Color.white, Color.clear, 0.3f);
         _handTrans = _tr.GetChild(0);
 		clueManager = new ClueManager ();
+
+
+        GameObject _fade = new GameObject("Fadeout");
+        Texture2D _tex2D = new Texture2D(1,1);
+        _tex2D.SetPixel(0, 0, Color.white);
+        _tex2D.Apply();
+        _fadeout = _fade.AddComponent<SpriteRenderer>();
+        _fadeout.sprite = Sprite.Create(_tex2D, new Rect(0, 0, 1, 1), new Vector2(0.5f, 0.5f));
+        _fadeout.material.color = Color.black;
+        _fade.transform.localScale = new Vector3(999,999,999);
+        _fade.transform.position = _tr.position + _tr.forward*0.5f;
+        _fade.transform.eulerAngles = _camera.transform.eulerAngles;
+        _fade.transform.parent = _tr;
     }
 
     // Update is called once per frame
@@ -82,10 +100,21 @@ public class CameraMovement : MonoBehaviour
 
         //----------Load next level when no Flaws left
         if (_flawGO.Count == 0)
-		{ 
-			Cursor.visible = true;
-			SceneManager.LoadSceneAsync(_nextScene);
+		{
+            if (_fadeout.material.color.a < 0.99f)
+            {
+                _fadeout.material.color = Color.Lerp(_fadeout.material.color, Color.black, Time.deltaTime * 2.5f);
+            }
+            else
+            {
+                Cursor.visible = true;
+                SceneManager.LoadSceneAsync(_nextScene);
+            }
 		}
+        else
+        {
+            _fadeout.material.color = Color.Lerp(_fadeout.material.color,Color.clear,Time.deltaTime * 2.5f);
+        }
 
     }
 
