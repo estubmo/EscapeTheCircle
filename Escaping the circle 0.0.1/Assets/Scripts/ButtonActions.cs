@@ -51,14 +51,21 @@ public class ButtonActions : MonoBehaviour
 	void Update ()
     {
         var eyeTrackerDeviceStatus = _eyexHost.EyeTrackingDeviceStatus;
-        if (eyeTrackerDeviceStatus != EyeXDeviceStatus.Tracking)
+        if (name == "Calibrate EyeX")
         {
-            if (name == "Calibrate EyeX")
+            if (eyeTrackerDeviceStatus != EyeXDeviceStatus.Tracking)
             {
-                _rend.color = Color.Lerp(Color.gray,Color.black,0.5f);
+
+                _rend.color = Color.Lerp(Color.gray, Color.black, 0.5f);
                 _rend.transform.GetChild(0).GetComponent<Text>().color = Color.Lerp(Color.gray, Color.black, 0.5f);
+
+                return;
             }
-            return;
+            else
+            {
+                _rend.color = Color.white;
+                _rend.transform.GetChild(0).GetComponent<Text>().color = Color.white;
+            }
         }
         _isLookedAt = false;
         _pointer.position = gaze.LastGazePoint.Screen;

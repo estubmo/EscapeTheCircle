@@ -10,6 +10,7 @@ public class CameraMovement : MonoBehaviour
     public float _sensitivityOfViewPort;
     public float _SpeedOfRotation;
     public int _nextScene;
+    public GameObject Circle;
 
     private Transform _tr;
     private Camera _camera;
@@ -60,7 +61,6 @@ public class CameraMovement : MonoBehaviour
         _handTrans = _tr.GetChild(0);
 		clueManager = new ClueManager ();
 
-
         GameObject _fade = new GameObject("Fadeout");
         Texture2D _tex2D = new Texture2D(1,1);
         _tex2D.SetPixel(0, 0, Color.white);
@@ -94,33 +94,53 @@ public class CameraMovement : MonoBehaviour
 
         FindFlaw();
 
-        HandAnimation();
-
-		FindClue ();
+        FindClue();
 
         //----------Load next level when no Flaws left
         if (_flawGO.Count == 0)
-		{
-            if (_fadeout.material.color.a < 0.99f)
+        {
+            _isMoving = true;
+
+            if (Circle != null)
             {
-                _fadeout.material.color = Color.Lerp(_fadeout.material.color, Color.black, Time.deltaTime * 2.5f);
+                Circle.GetComponent<FadeOut>()._fadeOut = true;
+                if (Circle.GetComponent<FadeOut>()._time >= Circle.GetComponent<FadeOut>()._timeOut)
+                {
+                    if (_fadeout.material.color.a < 0.99f)
+                    {
+                        _fadeout.material.color = Color.Lerp(_fadeout.material.color, Color.black, Time.deltaTime * 2.5f);
+                    }
+                    else
+                    {
+                        Cursor.visible = true;
+                        SceneManager.LoadSceneAsync(_nextScene);
+                    }
+                }
             }
             else
             {
-                Cursor.visible = true;
-                SceneManager.LoadSceneAsync(_nextScene);
+                if (_fadeout.material.color.a < 0.99f)
+                {
+                    _fadeout.material.color = Color.Lerp(_fadeout.material.color, Color.black, Time.deltaTime * 2.5f);
+                }
+                else
+                {
+                    Cursor.visible = true;
+                    SceneManager.LoadSceneAsync(_nextScene);
+                }
             }
-		}
+        }
         else
         {
-            _fadeout.material.color = Color.Lerp(_fadeout.material.color,Color.clear,Time.deltaTime * 2.5f);
+            _fadeout.material.color = Color.Lerp(_fadeout.material.color, Color.clear, Time.deltaTime * 2.5f);
         }
-
+        HandAnimation();
     }
 
     #region Animation
     void HandAnimation()
-    {
+    {   
+
         _averagePos = Vector2.zero;
         if (_isMoving)
         { _averagePos = new Vector2(9999, 9999); _prevAveragePos = new Vector2(9999, 9999); }
