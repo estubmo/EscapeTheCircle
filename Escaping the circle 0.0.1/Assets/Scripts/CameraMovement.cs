@@ -230,8 +230,7 @@ public class CameraMovement : MonoBehaviour
 							Debug.Log ("Victory");
 						} else {
 							Debug.Log ("Fail");
-							/*new List<Light>(clueManager.getClueContainer ()
-							.GetComponentsInChildren<Light> ()).ForEach(x => Destroy(x));*/
+
 						}
 					}
 				}

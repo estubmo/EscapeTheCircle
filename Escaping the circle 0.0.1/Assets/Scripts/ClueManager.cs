@@ -9,13 +9,17 @@ public class ClueManager : MonoBehaviour {
 	private List<GameObject> playerClueOrder;
 	private GameObject clueContainer;
 	private GameObject[] cluesCorrectOrder;
+	private List<string> corrList;
 
 	public ClueManager() {
 		clueTag = "Clue";
 		clueContainerTag = "ClueContainer";
 		playerClueOrder = new List<GameObject> ();
+		corrList = new List<string> ();
 		clueContainer = GameObject.FindGameObjectWithTag (clueContainerTag);
 		cluesCorrectOrder = GameObject.FindGameObjectsWithTag (clueTag);
+
+
 	}
 
 	public bool isClue(GameObject obj) {
@@ -33,18 +37,12 @@ public class ClueManager : MonoBehaviour {
 		return clueContainer;
 	}
 
-	public bool isClueOrderCorrect() {
-		var clueCount = clueContainer.transform.childCount;
-		var isCorrect = false;
-		if (clueCount == playerClueOrder.Count){
-			Debug.Log ("Correct order is " + cluesCorrectOrder [0].name +
-			" " + cluesCorrectOrder [1].name + " " + cluesCorrectOrder [2].name);
-			isCorrect = true;
-			for (var i=0; i<clueCount; i++) {
-				if (cluesCorrectOrder[i] == playerClueOrder [i]) {
-					Debug.Log ("Order not correct");
-					return false;
-				}
+	public bool isClueOrderCorrect(){
+		var isCorrect = true;
+		for (var i = 0; i < clueContainer.transform.childCount; i++) {
+			if (clueContainer.transform.GetChild (i).GetChild(0).name != playerClueOrder [i].name) {
+				
+				isCorrect = false;
 			}
 		}
 		return isCorrect;
