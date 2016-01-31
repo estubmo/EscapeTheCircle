@@ -246,8 +246,9 @@ MonoBehaviour:
   _timeNeededToFindFlaw: 1.4
   _sensitivityOfViewPort: 0.2
   _SpeedOfRotation: 50
-  _nextScene: 1
-  Circle: {fileID: 0}
+  _nextScene: 9
+  Circle: {fileID: 519798837}
+  puzzleSolved: 0
 --- !u!114 &331671781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +335,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!1 &519798837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 519798839}
+  - 114: {fileID: 519798838}
+  m_Layer: 0
+  m_Name: Circle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &519798838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519798837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb162f2fa6a75947a6f3f9b3351faa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeOut: 5
+  _fadeOut: 0
+  _time: 0
+  _AudioDemonLaugh: {fileID: 106770, guid: 78c3a298ab04b774ab7046f354e2ce90, type: 2}
+--- !u!4 &519798839
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519798837}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.27391994, y: 0.27391994, z: 0.27391994}
+  m_Children:
+  - {fileID: 1445963628}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
 --- !u!1 &591574903
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +439,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1001 &1316296577
 Prefab:
   m_ObjectHideFlags: 0
@@ -505,12 +550,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1445963626}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 0.039, y: 0.001, z: -0.125}
-  m_LocalScale: {x: 0.27391994, y: 0.27391994, z: 0.27391994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.14237738, y: -0.4563377, z: -0.0036506471}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 519798839}
+  m_RootOrder: 0
 --- !u!1 &1519900351
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +630,7 @@ Transform:
   m_LocalScale: {x: 0.36725107, y: 0.3672511, z: 0.3672511}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &1702043888
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +893,7 @@ Transform:
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!135 &1768099691
 SphereCollider:
   m_ObjectHideFlags: 0

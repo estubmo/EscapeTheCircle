@@ -1950,8 +1950,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1519900351}
   m_LocalRotation: {x: -0.00000037869876, y: -0.98797834, z: -0.0000013906788, w: -0.1545923}
-  m_LocalPosition: {x: -0.0000000054328, y: 1e-15, z: -0.000000048898}
-  m_LocalScale: {x: 0.34831417, y: 0.34831417, z: 0.34831417}
+  m_LocalPosition: {x: 0.281, y: -0, z: -0.331}
+  m_LocalScale: {x: 0.551159, y: 0.55115813, z: 0.55115813}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -2443,7 +2443,7 @@ GameObject:
   - 4: {fileID: 2120645597}
   - 114: {fileID: 2120645596}
   m_Layer: 8
-  m_Name: GameObject
+  m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2460,9 +2460,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb162f2fa6a75947a6f3f9b3351faa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeOut: 2
+  _timeOut: 5
   _fadeOut: 0
   _time: 0
+  _AudioDemonLaugh: {fileID: 106770, guid: 78c3a298ab04b774ab7046f354e2ce90, type: 2}
 --- !u!4 &2120645597
 Transform:
   m_ObjectHideFlags: 0
