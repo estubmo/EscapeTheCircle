@@ -153,7 +153,7 @@ GameObject:
   - 4: {fileID: 275239130}
   - 212: {fileID: 275239129}
   m_Layer: 0
-  m_Name: 2 Front
+  m_Name: 02 Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -469,7 +469,7 @@ GameObject:
   - 4: {fileID: 811727216}
   - 212: {fileID: 811727215}
   m_Layer: 0
-  m_Name: 1 Left
+  m_Name: 01 Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,7 +741,7 @@ GameObject:
   - 4: {fileID: 1605686305}
   - 212: {fileID: 1605686304}
   m_Layer: 0
-  m_Name: 0 Right
+  m_Name: 00 Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
