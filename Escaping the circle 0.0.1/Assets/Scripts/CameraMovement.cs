@@ -10,6 +10,7 @@ public class CameraMovement : MonoBehaviour
     public float _sensitivityOfViewPort;
     public float _SpeedOfRotation;
     public int _nextScene;
+    public GameObject Circle;
 
     private Transform _tr;
     private Camera _camera;
@@ -52,6 +53,7 @@ public class CameraMovement : MonoBehaviour
         gameObject.GetComponentInChildren<Renderer>().material.color = Color.Lerp(Color.white, Color.clear, 0.3f);
         _handTrans = _tr.GetChild(0);
 		clueManager = new ClueManager ();
+        
     }
 
     // Update is called once per frame
@@ -74,22 +76,27 @@ public class CameraMovement : MonoBehaviour
 
         FindFlaw();
 
-        HandAnimation();
+        
 
 		FindClue ();
 
         //----------Load next level when no Flaws left
         if (_flawGO.Count == 0)
-		{ 
-			Cursor.visible = true;
-			SceneManager.LoadSceneAsync(_nextScene);
+        {
+            Circle.GetComponent<FadeOut>()._fadeOut = true;
+            _isMoving = true;
+            if (Circle.GetComponent<FadeOut>()._time >= Circle.GetComponent<FadeOut>()._timeOut) {
+                Cursor.visible = true;             
+                SceneManager.LoadSceneAsync(_nextScene);
+            }
 		}
-
+        HandAnimation();
     }
 
     #region Animation
     void HandAnimation()
-    {
+    {   
+
         _averagePos = Vector2.zero;
         if (_isMoving)
         { _averagePos = new Vector2(9999, 9999); _prevAveragePos = new Vector2(9999, 9999); }
