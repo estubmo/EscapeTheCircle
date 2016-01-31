@@ -1,0 +1,10 @@
+diff a/Escaping the circle 0.0.1/Assets/Customtextures/Materials/betongSanta.mat b/Escaping the circle 0.0.1/Assets/Customtextures/Materials/betongSanta.mat	(rejected hunks)
+@@ -47,7 +47,7 @@
+         first:
+           name: _OcclusionMap
+         second:
+-          m_Texture: {fileID: 0}
++          m_Texture: {fileID: 2800000, guid: efa8d54a6f07d4e48b17219753f1a5b4, type: 3}
+           m_Scale: {x: 1, y: 1}
+           m_Offset: {x: 0, y: 0}
+       data:
