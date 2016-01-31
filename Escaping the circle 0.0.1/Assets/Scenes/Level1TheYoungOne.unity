@@ -233,7 +233,7 @@ MonoBehaviour:
   _sensitivityOfViewPort: 0.2
   _SpeedOfRotation: 50
   _nextScene: 6
-  Circle: {fileID: 0}
+  Circle: {fileID: 130411409}
   puzzleSolved: 0
 --- !u!114 &331671781
 MonoBehaviour:
