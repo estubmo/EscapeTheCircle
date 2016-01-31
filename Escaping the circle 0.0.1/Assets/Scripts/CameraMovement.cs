@@ -235,6 +235,7 @@ public class CameraMovement : MonoBehaviour
 							foreach (var l in lights) {
 								l.enabled = false;
 							}
+							// GET TO THE CHOPPA! (fault lights up)
 						} else {
 							Debug.Log ("Fail");
 							var lights = clueManager.getClueContainer ().GetComponentsInChildren<Light> ();
@@ -254,7 +255,7 @@ public class CameraMovement : MonoBehaviour
 
 	IEnumerator Sleepy()
 	{
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(3f);
 	}
 
 	#endregion
