@@ -18,11 +18,12 @@ public class ButtonActions : MonoBehaviour
     Image _rend;
     float _activateTimer;
     bool _isLookedAt;
-
+    private EyeXHost _eyexHost;
 
 
     void Start()
     {
+        _eyexHost = EyeXHost.GetInstance();
         gaze = GetComponent<GazePointDataComponent>();
         _button = GetComponent<Button>();
         _rend = GetComponent<Image>();
@@ -39,9 +40,12 @@ public class ButtonActions : MonoBehaviour
 	public void Exit () {
 		Application.Quit();
 	}
-<<<<<<< HEAD
+
 	void Update ()
     {
+        var eyeTrackerDeviceStatus = _eyexHost.EyeTrackingDeviceStatus;
+        if (eyeTrackerDeviceStatus == EyeXDeviceStatus.Tracking)
+        { return; }
         _isLookedAt = false;
         _pointer.position = gaze.LastGazePoint.Screen;
         EventSystem.current.RaycastAll(_pointer,_raycastResult);
