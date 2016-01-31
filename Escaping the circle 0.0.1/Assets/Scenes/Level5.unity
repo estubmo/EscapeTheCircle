@@ -248,6 +248,7 @@ MonoBehaviour:
   _SpeedOfRotation: 50
   _nextScene: 0
   Circle: {fileID: 0}
+  puzzleSolved: 0
 --- !u!114 &331671781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,15 +331,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 450312, guid: 78fb2b5a433a032499bf2493837ab00e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.534
+      value: -0.346
       objectReference: {fileID: 0}
     - target: {fileID: 450312, guid: 78fb2b5a433a032499bf2493837ab00e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.127
+      value: 0.081
       objectReference: {fileID: 0}
     - target: {fileID: 450312, guid: 78fb2b5a433a032499bf2493837ab00e, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.76
+      value: -0.812
       objectReference: {fileID: 0}
     - target: {fileID: 450312, guid: 78fb2b5a433a032499bf2493837ab00e, type: 2}
       propertyPath: m_LocalRotation.x
