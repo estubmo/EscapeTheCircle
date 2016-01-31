@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FlawStats : MonoBehaviour
 {
-    public float _timeToFindFlaw;
+    //public float _timeToFindFlaw;
     private float _size;
     void Start()
     {

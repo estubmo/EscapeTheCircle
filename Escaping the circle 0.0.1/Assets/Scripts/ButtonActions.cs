@@ -34,6 +34,12 @@ public class ButtonActions : MonoBehaviour
 
     public void ChangeLevel(int IndexOfScene)
     {
+        if (name == "Calibrate EyeX")
+        {
+            var eyeTrackerDeviceStatus = _eyexHost.EyeTrackingDeviceStatus;
+            if (eyeTrackerDeviceStatus != EyeXDeviceStatus.Tracking)
+            { return; }
+        }
         SceneManager.LoadScene(IndexOfScene);
     } 
 
@@ -46,7 +52,14 @@ public class ButtonActions : MonoBehaviour
     {
         var eyeTrackerDeviceStatus = _eyexHost.EyeTrackingDeviceStatus;
         if (eyeTrackerDeviceStatus != EyeXDeviceStatus.Tracking)
-        { return; }
+        {
+            if (name == "Calibrate EyeX")
+            {
+                _rend.color = Color.Lerp(Color.gray,Color.black,0.5f);
+                _rend.transform.GetChild(0).GetComponent<Text>().color = Color.Lerp(Color.gray, Color.black, 0.5f);
+            }
+            return;
+        }
         _isLookedAt = false;
         _pointer.position = gaze.LastGazePoint.Screen;
         EventSystem.current.RaycastAll(_pointer,_raycastResult);

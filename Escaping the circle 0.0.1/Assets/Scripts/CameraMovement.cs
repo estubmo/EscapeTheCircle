@@ -31,13 +31,15 @@ public class CameraMovement : MonoBehaviour
     private Ray _mouseToWorldRay;
     private RaycastHit _mouseRayHit;
     private RaycastHit _prevMouseRayHit;
-    private int _flawId = -1;
+    private string _flawId = null;
     private Vector2 _averagePos;
     private Vector2 _prevAveragePos;
     private float _timeAnim;
     private bool _isMoving;
     private float _timeAnimStart;
     private GameObject _tagetFlaw;
+    private float _timerClue = -1f;
+    private bool _clueLighting;
 
 
    
@@ -179,7 +181,7 @@ public class CameraMovement : MonoBehaviour
 			Cursor.visible = true;
 			mouseActive = true;
 			mouseTimer = 0;
-			Debug.Log ("NotTraking");
+			//Debug.Log ("NotTraking");
 		}
 
         //Debug.Log ("mouseTimer: " + mouseTimer + " mouseActive: " + mouseActive); 
@@ -205,18 +207,19 @@ public class CameraMovement : MonoBehaviour
         {
             if (_prevMouseRayHit.collider != null)
             {
+                Debug.Log("Hit: " + _prevMouseRayHit.collider.name);
                 if (_prevMouseRayHit.collider.tag == "Flaw")
                 {
-                    _flawId = _prevMouseRayHit.collider.GetInstanceID();
+                    _flawId = _prevMouseRayHit.collider.name;
                     _tagetFlaw = _prevMouseRayHit.collider.gameObject;
                 }
             }
         }
-        else if (_flawId > 0)
+        else if (_flawId != null)
         {
             _flawGO.Remove(_tagetFlaw);
             Destroy(_tagetFlaw);
-            _flawId = -1;
+            _flawId = null;
         }
     }
     #endregion
@@ -232,37 +235,61 @@ public class CameraMovement : MonoBehaviour
 					if (clueManager.isClue (obj)) {
 						clueManager.addPlayerClue (obj);
 						obj.GetComponentInChildren<Light> (true).enabled = true;
+                        if(clueManager.playerClueOrder.Count == clueManager.clueContainer.transform.childCount)
 						if (clueManager.isClueOrderCorrect ()) {
 							Debug.Log ("Victory");
 							var lights = clueManager.getClueContainer ().GetComponentsInChildren<Light> ();
-							foreach (var l in lights) {
-								l.color = Color.green;
-							}
-							Sleepy ();
-							foreach (var l in lights) {
-								l.enabled = false;
-							}
+                            //_clueLighting = true;
+                            if (_timerClue <= 0f)
+                            {
+                                foreach (var l in lights)
+                                {
+                                    l.color = Color.green;
+                                }
+                            }
 							// GET TO THE CHOPPA! (fault lights up)
 						} else {
 							Debug.Log ("Fail");
 							var lights = clueManager.getClueContainer ().GetComponentsInChildren<Light> ();
-							foreach (var l in lights) {
-								l.color = Color.red;
-							}
-							Sleepy ();
-							foreach (var l in lights) {
-								l.enabled = false;
-							}
-						}
+                            _clueLighting = true;
+                            if (_timerClue <= 0f)
+                            {
+                                foreach (var l in lights)
+                                {
+                                    l.color = Color.red;
+                                }
+                            }
+                        }
 					}
 				}
 			}
 		}
-	}
+
+        
+
+        if (_clueLighting)
+        {
+            _timerClue += Time.deltaTime;
+            var lights = clueManager.getClueContainer().GetComponentsInChildren<Light>();
+            if (_timerClue > 2f)
+            {
+                foreach (var l in lights)
+                {
+                    l.enabled = false;
+                    l.color = Color.white;
+                }
+                _timerClue = -1f;
+                clueManager.ResetPlayerClues();
+                _clueLighting = false;
+            }
+        }
+    }
 
 	IEnumerator Sleepy()
 	{
 		yield return new WaitForSeconds(3f);
+
+
 	}
 
 	#endregion
