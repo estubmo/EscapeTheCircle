@@ -44,7 +44,7 @@ public class ButtonActions : MonoBehaviour
 	void Update ()
     {
         var eyeTrackerDeviceStatus = _eyexHost.EyeTrackingDeviceStatus;
-        if (eyeTrackerDeviceStatus == EyeXDeviceStatus.Tracking)
+        if (eyeTrackerDeviceStatus != EyeXDeviceStatus.Tracking)
         { return; }
         _isLookedAt = false;
         _pointer.position = gaze.LastGazePoint.Screen;
@@ -79,7 +79,10 @@ public class ButtonActions : MonoBehaviour
             ExecuteEvents.Execute(gameObject, _pointer, ExecuteEvents.pointerExitHandler);
             /*if (_lerpColor > 0f)
             { _lerpColor -= 0.05f; }*/
-            _activateTimer -= Time.deltaTime;
+            if (_activateTimer > 0)
+            {
+                _activateTimer -= Time.deltaTime;
+            }
         }
         //_rend.color = Color.Lerp(Color.white, new Vector4(80f/255f,139f/255f,236f/255f,255f/255f), _lerpColor);
 
