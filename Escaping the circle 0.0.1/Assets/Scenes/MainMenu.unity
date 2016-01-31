@@ -244,6 +244,7 @@ GameObject:
   - 124: {fileID: 360237785}
   - 81: {fileID: 360237784}
   - 114: {fileID: 360237789}
+  - 114: {fileID: 360237790}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -330,6 +331,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gazePointDataMode: 2
+--- !u!114 &360237790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360237783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4551bc143ace126478b0f6c5689ede5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &718083980
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,9 +354,10 @@ GameObject:
   - 114: {fileID: 718083983}
   - 114: {fileID: 718083982}
   - 114: {fileID: 718083984}
+  - 114: {fileID: 718083986}
   m_Layer: 5
   m_Name: Options
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,7 +391,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001deca381cb6b40b76f30daac18d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PreviousScene: 0
 --- !u!114 &718083983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,6 +476,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 718083980}
+--- !u!114 &718083986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 718083980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea512e96fc964f48b2fc6ddeffff73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gazePointDataMode: 2
 --- !u!1 &727228524
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,9 +500,10 @@ GameObject:
   - 114: {fileID: 727228527}
   - 114: {fileID: 727228526}
   - 114: {fileID: 727228529}
+  - 114: {fileID: 727228530}
   m_Layer: 5
   m_Name: Play
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -597,7 +622,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001deca381cb6b40b76f30daac18d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PreviousScene: 0
+--- !u!114 &727228530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 727228524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea512e96fc964f48b2fc6ddeffff73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gazePointDataMode: 2
 --- !u!1 &885279079
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,9 +646,10 @@ GameObject:
   - 114: {fileID: 885279083}
   - 114: {fileID: 885279082}
   - 114: {fileID: 885279081}
+  - 114: {fileID: 885279085}
   m_Layer: 5
   m_Name: Exit
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -646,7 +683,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001deca381cb6b40b76f30daac18d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PreviousScene: 0
 --- !u!114 &885279082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,6 +768,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 885279079}
+--- !u!114 &885279085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 885279079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea512e96fc964f48b2fc6ddeffff73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gazePointDataMode: 2
 --- !u!1 &934383503
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,9 +792,10 @@ GameObject:
   - 114: {fileID: 934383507}
   - 114: {fileID: 934383506}
   - 114: {fileID: 934383505}
+  - 114: {fileID: 934383509}
   m_Layer: 5
   m_Name: Credits
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -780,7 +829,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001deca381cb6b40b76f30daac18d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PreviousScene: 0
 --- !u!114 &934383506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,6 +914,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 934383503}
+--- !u!114 &934383509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 934383503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea512e96fc964f48b2fc6ddeffff73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gazePointDataMode: 2
 --- !u!1 &1020587520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,9 +1316,10 @@ GameObject:
   - 114: {fileID: 1554877417}
   - 114: {fileID: 1554877416}
   - 114: {fileID: 1554877418}
+  - 114: {fileID: 1554877420}
   m_Layer: 5
   m_Name: How To Play
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1292,7 +1353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001deca381cb6b40b76f30daac18d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _PreviousScene: 0
 --- !u!114 &1554877417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1378,6 +1438,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1554877414}
+--- !u!114 &1554877420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1554877414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea512e96fc964f48b2fc6ddeffff73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gazePointDataMode: 2
 --- !u!1 &1579625640
 GameObject:
   m_ObjectHideFlags: 0

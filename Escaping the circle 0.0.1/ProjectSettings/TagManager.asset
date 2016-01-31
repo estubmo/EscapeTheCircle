@@ -7,6 +7,7 @@ TagManager:
   - Flaw
   - Clue
   - ClueContainer
+  - Button
   layers:
   - Default
   - TransparentFX

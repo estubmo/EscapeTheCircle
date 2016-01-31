@@ -17,6 +17,7 @@ public class CameraMovement : MonoBehaviour
     private Vector3[] _prevMousePosViewPort = new Vector3[10];
     private Ray _mouseToWorldRay;
     private RaycastHit _mouseRayHit;
+    private RaycastHit _prevMouseRayHit;
 
     private float mouseTimer = 0.0f;
     private const float mouseTimerLimit = 0.5f;
@@ -121,6 +122,7 @@ public class CameraMovement : MonoBehaviour
 
         if (_timeAnimStart > 0.5f && !(_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim")))
         {
+            _prevMouseRayHit = _mouseRayHit;
             _handAnim.SetBool("ReachOut", true);
             _prevAveragePos = _averagePos;
             _timeAnim = 1f;
@@ -197,12 +199,12 @@ public class CameraMovement : MonoBehaviour
     {
         if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
         {
-            if (_mouseRayHit.collider != null)
+            if (_prevMouseRayHit.collider != null)
             {
-                if (_mouseRayHit.collider.tag == "Flaw")
+                if (_prevMouseRayHit.collider.tag == "Flaw")
                 {
-                    _flawId = _mouseRayHit.collider.GetInstanceID();
-                    _tagetFlaw = _mouseRayHit.collider.gameObject;
+                    _flawId = _prevMouseRayHit.collider.GetInstanceID();
+                    _tagetFlaw = _prevMouseRayHit.collider.gameObject;
                 }
             }
         }
@@ -221,8 +223,8 @@ public class CameraMovement : MonoBehaviour
 		if (GameObject.FindGameObjectWithTag("Clue") != null){
 			if (_handAnim.GetCurrentAnimatorStateInfo(0).IsName("HandReachoutAnim"))
 			{
-				if (_mouseRayHit.collider != null) {
-					var obj = _mouseRayHit.collider.gameObject;
+				if (_prevMouseRayHit.collider != null) {
+					var obj = _prevMouseRayHit.collider.gameObject;
 					if (clueManager.isClue (obj)) {
 						clueManager.addPlayerClue (obj);
 						obj.GetComponentInChildren<Light> (true).enabled = true;
