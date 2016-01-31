@@ -6,6 +6,11 @@ using Tobii.EyeX.Framework;
 
 public class CameraMovement : MonoBehaviour
 {
+    public float _timeNeededToFindFlaw;
+    public float _sensitivityOfViewPort;
+    public float _SpeedOfRotation;
+    public int _nextScene;
+
     private Transform _tr;
     private Camera _camera;
     private Animator _handAnim;
@@ -15,21 +20,16 @@ public class CameraMovement : MonoBehaviour
     private Vector3[] _prevMousePos = new Vector3[10];
     private int _index = 0;
     private Vector3[] _prevMousePosViewPort = new Vector3[10];
-    private Ray _mouseToWorldRay;
-    private RaycastHit _mouseRayHit;
-    private RaycastHit _prevMouseRayHit;
-
     private float mouseTimer = 0.0f;
     private const float mouseTimerLimit = 0.5f;
     private bool mouseActive;
-
+    private Vector3 inputPosition;
     private GazePointDataComponent gaze;
     private EyeXHost _eyexHost;
-
 	private ClueManager clueManager;
-
-    private Vector3 inputPosition;
-
+    private Ray _mouseToWorldRay;
+    private RaycastHit _mouseRayHit;
+    private RaycastHit _prevMouseRayHit;
     private int _flawId = -1;
     private Vector2 _averagePos;
     private Vector2 _prevAveragePos;
@@ -39,10 +39,7 @@ public class CameraMovement : MonoBehaviour
     private GameObject _tagetFlaw;
 
 
-    public float _timeNeededToFindFlaw;
-    public float _sensitivityOfViewPort;
-    public float _SpeedOfRotation;
-    public int _nextScene;
+   
     // Use this for initialization
     void Start()
     {

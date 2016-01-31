@@ -266,7 +266,7 @@ GameObject:
   - 114: {fileID: 729584064}
   m_Layer: 5
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001deca381cb6b40b76f30daac18d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _PreviousScene: 0
 --- !u!114 &729584061
 MonoBehaviour:
   m_ObjectHideFlags: 0

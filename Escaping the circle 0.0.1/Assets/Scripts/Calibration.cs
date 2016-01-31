@@ -27,7 +27,17 @@ public class Calibration : MonoBehaviour
 		_gazePointProvider = _eyeXHost.GetGazePointDataProvider (Tobii.EyeX.Framework.GazePointDataMode.LightlyFiltered);
 		onEnable ();
         _tr = transform;
-        _calStats = GameObject.Find("CalibrationStats").GetComponent<CalibrationStats>();
+        GameObject[] _tempCalStats = GameObject.FindGameObjectsWithTag("Stats");
+        if (_tempCalStats.Length > 1)
+        {
+            for (int i = 1; i < _tempCalStats.Length; i++)
+            {
+                Destroy(_tempCalStats[i]);
+            }
+        }
+
+        _calStats = _tempCalStats[0].GetComponent<CalibrationStats>();
+        _calStats._calibrationSize = 0;
 	}
 
 	// Update is called once per frame

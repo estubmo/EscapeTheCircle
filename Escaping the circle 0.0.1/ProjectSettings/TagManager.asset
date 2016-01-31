@@ -8,6 +8,7 @@ TagManager:
   - Clue
   - ClueContainer
   - Button
+  - Stats
   layers:
   - Default
   - TransparentFX

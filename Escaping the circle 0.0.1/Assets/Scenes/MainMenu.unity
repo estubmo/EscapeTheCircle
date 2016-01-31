@@ -356,7 +356,7 @@ GameObject:
   - 114: {fileID: 718083984}
   - 114: {fileID: 718083986}
   m_Layer: 5
-  m_Name: Options
+  m_Name: Calibrate EyeX
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -391,6 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001deca381cb6b40b76f30daac18d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _PreviousScene: 0
 --- !u!114 &718083983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -622,6 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001deca381cb6b40b76f30daac18d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _PreviousScene: 0
 --- !u!114 &727228530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,6 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001deca381cb6b40b76f30daac18d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _PreviousScene: 0
 --- !u!114 &885279082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,6 +832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001deca381cb6b40b76f30daac18d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _PreviousScene: 0
 --- !u!114 &934383506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,7 +996,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Options
+  m_Text: Calibrate EyeX
 --- !u!222 &1020587523
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1353,6 +1357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001deca381cb6b40b76f30daac18d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _PreviousScene: 0
 --- !u!114 &1554877417
 MonoBehaviour:
   m_ObjectHideFlags: 0

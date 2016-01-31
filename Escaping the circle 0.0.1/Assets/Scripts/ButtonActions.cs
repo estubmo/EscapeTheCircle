@@ -38,7 +38,8 @@ public class ButtonActions : MonoBehaviour
     } 
 
 	public void Exit () {
-		Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
 	}
 
 	void Update ()
@@ -51,12 +52,18 @@ public class ButtonActions : MonoBehaviour
         EventSystem.current.RaycastAll(_pointer,_raycastResult);
         if (_raycastResult.Count > 0)
         {
-            if (_raycastResult[0].gameObject.transform.parent.tag == "Button")
+            if (_raycastResult[0].gameObject.tag == "Button")
+            {
+                if (_raycastResult[0].gameObject.name == name)
+                {
+                    _isLookedAt = true;
+                }
+            }
+            else if(_raycastResult[0].gameObject.transform.parent.tag == "Button")
             {
                 if (_raycastResult[0].gameObject.transform.parent.name == name)
                 {
                     _isLookedAt = true;
-                    
                 }
             }
         }
@@ -70,22 +77,16 @@ public class ButtonActions : MonoBehaviour
         if (_isLookedAt)
         {
             ExecuteEvents.Execute(gameObject, _pointer, ExecuteEvents.pointerEnterHandler);
-            /*if (_lerpColor < 1.05f)
-            { _lerpColor += 0.1f; }*/
             _activateTimer += Time.deltaTime;
         }
         else
         {
             ExecuteEvents.Execute(gameObject, _pointer, ExecuteEvents.pointerExitHandler);
-            /*if (_lerpColor > 0f)
-            { _lerpColor -= 0.05f; }*/
             if (_activateTimer > 0)
             {
                 _activateTimer -= Time.deltaTime;
             }
         }
-        //_rend.color = Color.Lerp(Color.white, new Vector4(80f/255f,139f/255f,236f/255f,255f/255f), _lerpColor);
-
         _rend.color = Color.Lerp(Color.white, Color.red, _activateTimer/3);
 
         if (_activateTimer > 3f)
