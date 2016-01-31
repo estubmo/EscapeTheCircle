@@ -20,12 +20,16 @@ public class ButtonActions : MonoBehaviour
     bool _isLookedAt;
 
 
+
     void Start()
     {
         gaze = GetComponent<GazePointDataComponent>();
         _button = GetComponent<Button>();
         _rend = GetComponent<Image>();
     }
+
+	public int _PreviousScene;
+
 
     public void ChangeLevel(int IndexOfScene)
     {
@@ -35,6 +39,7 @@ public class ButtonActions : MonoBehaviour
 	public void Exit () {
 		Application.Quit();
 	}
+<<<<<<< HEAD
 	void Update ()
     {
         _isLookedAt = false;
@@ -51,6 +56,12 @@ public class ButtonActions : MonoBehaviour
                 }
             }
         }
+
+		if(Input.GetButtonDown("Cancel"))
+		{
+			SceneManager.LoadScene(_PreviousScene);
+		}
+
 
         if (_isLookedAt)
         {
