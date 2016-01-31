@@ -387,7 +387,8 @@ MonoBehaviour:
   m_Text: We all know that wizened old wizards draw circles in the ground to summon
     and capture deamons. You are that deamon, and you are far from happy. You intend
     to break out from here before the pathetic mortals can compell you to do otherwise,
-    by finding that one fatal flaw in their circles and FORCING your way to freedom!
+    by finding that one fatal flaw in their circles, focusing on it, and FORCING your
+    way to freedom!
 --- !u!222 &1137022407
 CanvasRenderer:
   m_ObjectHideFlags: 0
