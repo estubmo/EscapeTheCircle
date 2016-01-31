@@ -62,7 +62,7 @@ public class Calibration : MonoBehaviour
             for(int i = 0; i < _gazePointList.Count;i++)
             { Destroy(_gazePointList[i]);}
             _gazePointList.Clear();
-            _tr.localScale = new Vector3(_distance * _multi - _add, _distance * _multi - _add, _distance * _multi - _add);
+            _tr.localScale = new Vector3((_distance * _multi - _add)/5f, (_distance * _multi - _add)/5f, (_distance * _multi - _add)/5f);
             Debug.Log(_distance);
             _calStats._calibrationSize = _distance;
             _stage++;
@@ -75,7 +75,7 @@ public class Calibration : MonoBehaviour
             var gazePoint = _gazePointProvider.Last;
             GameObject go = (GameObject)Instantiate(Resources.Load("BlueDot"));
             go.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(gazePoint.Screen.x, gazePoint.Screen.y, 0.0f));
-            go.transform.position = new Vector3(go.transform.position.x, go.transform.position.y, -1.0f);
+            go.transform.position = new Vector3(go.transform.position.x, go.transform.position.y, 1.0f);
             //Debug.Log(go.transform.position);
             //Debug.Log(string.Format("X: {0} Y:{1}", gazePoint.Display.x, gazePoint.Display.y));
             _gazePointList.Add(go);
