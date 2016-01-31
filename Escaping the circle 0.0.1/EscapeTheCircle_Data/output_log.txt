@@ -1,33 +1,960 @@
-Initialize engine version: 5.3.2f1 (e87ab445ead0)
+Initialize engine version: 5.3.1f1 (cc9cbbcc37b4)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 980M      (ID=0x1617)
+    Renderer: NVIDIA GeForce 940M           (ID=0x1347)
     Vendor:   NVIDIA
-    VRAM:     3072 MB
+    VRAM:     1996 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Tobii.EyeX.Client.Net20.dll (this message is harmless)
-Loading C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Tobii.EyeX.Client.Net20.dll into Unity Child Domain
-Platform assembly: C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Tobii.EyeX.Client.Net20.dll (this message is harmless)
-Loading C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Tobii.EyeX.Client.Net20.dll into Unity Child Domain
-- Completed reload, in  0.043 seconds
-Platform assembly: C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\kenneth\Desktop\gitshit\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 75Hz; virtual: 1920x1080 at 0,0
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Tobii.EyeX.Client.Net20.dll (this message is harmless)
+Loading C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\Tobii.EyeX.Client.Net20.dll into Unity Child Domain
+- Completed reload, in  0.305 seconds
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 59Hz; virtual: 3456x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.471339 ms
-Setting up 2 worker threads for Enlighten.
-  Thread -> id: 70e4 -> priority: 1 
-  Thread -> id: 7f60 -> priority: 1 
+UnloadTime: 0.713756 ms
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/Tobii.EyeX.Client.dll
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/.\Tobii.EyeX.Client.dll
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/Tobii.EyeX.Client.dll
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/Tobii.EyeX.Client
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/.\Tobii.EyeX.Client
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/Tobii.EyeX.Client
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/libTobii.EyeX.Client.dll
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/.\libTobii.EyeX.Client.dll
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/libTobii.EyeX.Client.dll
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/Tobii.EyeX.Client.dll
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/.\Tobii.EyeX.Client.dll
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/Tobii.EyeX.Client.dll
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/Tobii.EyeX.Client
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/.\Tobii.EyeX.Client
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/Tobii.EyeX.Client
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/libTobii.EyeX.Client.dll
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/.\libTobii.EyeX.Client.dll
+Fallback handler could not load library C:/Users/alexa/OneDrive/Dokumenter/EscapeTheCircle/Escaping the circle 0.0.1/EscapeTheCircle_Data/Mono/libTobii.EyeX.Client.dll
+EyeX initialization failed because the client access library 'Tobii.EyeX.Client.dll' could not be loaded. Please make sure that it is present in the root directory of the game/application.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.793161 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 372.
+Total: 0.287384 ms (FindLiveObjects: 0.029508 ms CreateObjectMapping: 0.025231 ms MarkObjects: 0.220670 ms  DeleteObjects: 0.011119 ms)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.603849 ms
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 469.
+Total: 0.300213 ms (FindLiveObjects: 0.017106 ms CreateObjectMapping: 0.023948 ms MarkObjects: 0.215110 ms  DeleteObjects: 0.043620 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.551675 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 469.
+Total: 0.266856 ms (FindLiveObjects: 0.017106 ms CreateObjectMapping: 0.021810 ms MarkObjects: 0.214682 ms  DeleteObjects: 0.013257 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.552958 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 469.
+Total: 0.307056 ms (FindLiveObjects: 0.016678 ms CreateObjectMapping: 0.021382 ms MarkObjects: 0.255310 ms  DeleteObjects: 0.013257 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.571775 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 469.
+Total: 0.249750 ms (FindLiveObjects: 0.016250 ms CreateObjectMapping: 0.021382 ms MarkObjects: 0.200570 ms  DeleteObjects: 0.011119 ms)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Plane
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.455452 ms
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 395.
+Total: 0.252744 ms (FindLiveObjects: 0.011546 ms CreateObjectMapping: 0.014540 ms MarkObjects: 0.172345 ms  DeleteObjects: 0.054312 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.443478 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 395.
+Total: 0.248895 ms (FindLiveObjects: 0.014540 ms CreateObjectMapping: 0.021810 ms MarkObjects: 0.200997 ms  DeleteObjects: 0.011119 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.594440 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 395.
+Total: 0.304918 ms (FindLiveObjects: 0.017106 ms CreateObjectMapping: 0.025659 ms MarkObjects: 0.233072 ms  DeleteObjects: 0.028225 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.496080 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 395.
+Total: 0.180898 ms (FindLiveObjects: 0.011974 ms CreateObjectMapping: 0.016678 ms MarkObjects: 0.141981 ms  DeleteObjects: 0.009836 ms)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.585460 ms
+
+Unloading 60 unused Assets to reduce memory usage. Loaded Objects now: 284.
+Total: 0.257448 ms (FindLiveObjects: 0.010691 ms CreateObjectMapping: 0.013684 ms MarkObjects: 0.161226 ms  DeleteObjects: 0.071418 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.504205 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 284.
+Total: 0.238631 ms (FindLiveObjects: 0.018816 ms CreateObjectMapping: 0.013684 ms MarkObjects: 0.193300 ms  DeleteObjects: 0.011974 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.357519 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 284.
+Total: 0.180470 ms (FindLiveObjects: 0.022238 ms CreateObjectMapping: 0.012402 ms MarkObjects: 0.137704 ms  DeleteObjects: 0.007697 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.422523 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 284.
+Total: 0.233927 ms (FindLiveObjects: 0.011546 ms CreateObjectMapping: 0.024376 ms MarkObjects: 0.177476 ms  DeleteObjects: 0.008553 ms)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Hit: Flaw
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.487954 ms
+
+Unloading 60 unused Assets to reduce memory usage. Loaded Objects now: 238.
+Total: 0.316892 ms (FindLiveObjects: 0.011546 ms CreateObjectMapping: 0.018389 ms MarkObjects: 0.165074 ms  DeleteObjects: 0.121026 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.465288 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 238.
+Total: 0.182181 ms (FindLiveObjects: 0.020955 ms CreateObjectMapping: 0.008553 ms MarkObjects: 0.150106 ms  DeleteObjects: 0.002565 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.368638 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 238.
+Total: 0.216821 ms (FindLiveObjects: 0.007270 ms CreateObjectMapping: 0.019244 ms MarkObjects: 0.186885 ms  DeleteObjects: 0.002565 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.434497 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 238.
+Total: 0.290805 ms (FindLiveObjects: 0.013257 ms CreateObjectMapping: 0.013684 ms MarkObjects: 0.257448 ms  DeleteObjects: 0.005987 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.808268 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 293.
+Total: 0.408410 ms (FindLiveObjects: 0.038916 ms CreateObjectMapping: 0.025659 ms MarkObjects: 0.338702 ms  DeleteObjects: 0.004276 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 2eec -> priority: 1 

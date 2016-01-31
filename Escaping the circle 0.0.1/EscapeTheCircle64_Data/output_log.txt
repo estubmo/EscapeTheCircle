@@ -1,0 +1,68 @@
+Initialize engine version: 5.3.1f1 (cc9cbbcc37b4)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce 940M           (ID=0x1347)
+    Vendor:   NVIDIA
+    VRAM:     1996 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\Tobii.EyeX.Client.Net20.dll (this message is harmless)
+Loading C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\Tobii.EyeX.Client.Net20.dll into Unity Child Domain
+- Completed reload, in  0.267 seconds
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\alexa\OneDrive\Dokumenter\EscapeTheCircle\Escaping the circle 0.0.1\EscapeTheCircle64_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 59Hz; virtual: 3456x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.971632 ms
+EyeX is running.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 9.521744 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 292.
+Total: 0.267712 ms (FindLiveObjects: 0.022665 ms CreateObjectMapping: 0.019672 ms MarkObjects: 0.216393 ms  DeleteObjects: 0.003421 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.044334 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 297.
+Total: 0.278831 ms (FindLiveObjects: 0.038916 ms CreateObjectMapping: 0.015823 ms MarkObjects: 0.219387 ms  DeleteObjects: 0.003848 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.740698 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 302.
+Total: 0.329294 ms (FindLiveObjects: 0.034212 ms CreateObjectMapping: 0.011546 ms MarkObjects: 0.278831 ms  DeleteObjects: 0.004276 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.046900 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 307.
+Total: 0.345973 ms (FindLiveObjects: 0.035495 ms CreateObjectMapping: 0.011974 ms MarkObjects: 0.290805 ms  DeleteObjects: 0.007270 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.815966 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 312.
+Total: 0.416108 ms (FindLiveObjects: 0.037633 ms CreateObjectMapping: 0.018816 ms MarkObjects: 0.352387 ms  DeleteObjects: 0.006414 ms)
+
+EyeX is shutting down.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 3324 -> priority: 1 
